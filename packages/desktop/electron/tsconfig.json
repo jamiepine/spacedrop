@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES5",
-    "outDir": "../build/electron",
+    "target": "ESNext",
     "skipLibCheck": true,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
@@ -10,6 +9,7 @@
     "strict": true,
     "incremental": true,
     "esModuleInterop": true,
+    "noEmit": true,
     "rootDir": "."
   }
 }
