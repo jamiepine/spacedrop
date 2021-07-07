@@ -7,7 +7,9 @@ The `JSONObject` scalar type represents JSON objects as specified by [ECMA-404](
 """
 scalar JSONObject
 
-type Mutation
+type Mutation {
+  TestMutation: String!
+}
 
 type Query {
   TestResult: String!

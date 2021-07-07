@@ -22,9 +22,9 @@ export const builder = new SchemaBuilder<{
     JSONObject: { Input: Record<string, unknown>; Output: object };
     BigInt: { Input: bigint; Output: number };
   };
-  Objects: {
+  Objects: { 
     
-  };
+   };
 
   // Define the shape of the auth scopes that we'll be using:
   AuthScopes: {
