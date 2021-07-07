@@ -3,12 +3,12 @@ import isDev from 'electron-is-dev';
 import { BrowserWindow } from 'glasstron';
 import path from 'path';
 
-app.dock.hide();
+app.dock?.hide();
 
 let mainWindow: BrowserWindow;
 
 async function createWindow() {
-  app.dock.hide();
+  app.dock?.hide();
   mainWindow = new BrowserWindow({
     width: 583,
     height: 352,
@@ -26,7 +26,7 @@ async function createWindow() {
     show: false,
     skipTaskbar: true
   });
-  app.dock.hide();
+  app.dock?.hide();
 
   if (isDev) {
     mainWindow.loadURL('http://localhost:3000/index.html');

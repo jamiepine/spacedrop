@@ -3,6 +3,18 @@ import styled, { ThemeProvider } from 'styled-components';
 import themeDark from './theme/themeDark';
 import Fonts from './theme/fonts';
 import DropView from './screens/DropView';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  gql
+} from "@apollo/client";
+import { useEffect } from 'react';
+
+const client = new ApolloClient({
+  uri: 'ws://localhost:1500/graphql',
+  cache: new InMemoryCache()
+});
 
 const Container = styled.div`
   /* background-color: ${(props) => props.theme.background + '40'}; */
@@ -15,12 +27,23 @@ const Container = styled.div`
 `;
 
 const App = () => {
+  useEffect(() => {
+    client.query({
+      query: gql`
+        query Test {
+          TestQuery
+        }
+      `
+    }).then(console.log)
+  });
   return (
     <ThemeProvider theme={themeDark}>
-      <Fonts />
-      <Container>
-        <DropView />
-      </Container>
+      <ApolloProvider client={client} >
+        <Fonts />
+        <Container>
+          <DropView />
+        </Container>
+      </ApolloProvider>
     </ThemeProvider>
   );
 };

@@ -57,20 +57,22 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
+var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 var electron_1 = require("electron");
 var electron_is_dev_1 = __importDefault(require("electron-is-dev"));
 var glasstron_1 = require("glasstron");
 var path_1 = __importDefault(require("path"));
-electron_1.app.dock.hide();
+(_a = electron_1.app.dock) === null || _a === void 0 ? void 0 : _a.hide();
 var mainWindow;
 function createWindow() {
+    var _a, _b;
     return __awaiter(this, void 0, void 0, function () {
-        var _a, installDevtools, REACT_DEVELOPER_TOOLS;
-        return __generator(this, function (_b) {
-            switch (_b.label) {
+        var _c, installDevtools, REACT_DEVELOPER_TOOLS;
+        return __generator(this, function (_d) {
+            switch (_d.label) {
                 case 0:
-                    electron_1.app.dock.hide();
+                    (_a = electron_1.app.dock) === null || _a === void 0 ? void 0 : _a.hide();
                     mainWindow = new glasstron_1.BrowserWindow({
                         width: 583,
                         height: 352,
@@ -88,19 +90,19 @@ function createWindow() {
                         show: false,
                         skipTaskbar: true
                     });
-                    electron_1.app.dock.hide();
+                    (_b = electron_1.app.dock) === null || _b === void 0 ? void 0 : _b.hide();
                     if (!electron_is_dev_1.default) return [3 /*break*/, 3];
                     mainWindow.loadURL('http://localhost:3000/index.html');
                     return [4 /*yield*/, Promise.resolve().then(function () { return __importStar(require('electron-devtools-installer')); })];
                 case 1:
-                    _a = _b.sent(), installDevtools = _a.default, REACT_DEVELOPER_TOOLS = _a.REACT_DEVELOPER_TOOLS;
+                    _c = _d.sent(), installDevtools = _c.default, REACT_DEVELOPER_TOOLS = _c.REACT_DEVELOPER_TOOLS;
                     return [4 /*yield*/, installDevtools(REACT_DEVELOPER_TOOLS)];
                 case 2:
-                    _b.sent();
+                    _d.sent();
                     return [3 /*break*/, 4];
                 case 3:
                     mainWindow.loadURL("file://" + __dirname + "/../index.html");
-                    _b.label = 4;
+                    _d.label = 4;
                 case 4:
                     mainWindow.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true });
                     return [2 /*return*/];

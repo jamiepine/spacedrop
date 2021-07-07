@@ -13,9 +13,12 @@
     "@giraphql/plugin-validation": "^2.6.1",
     "@prisma/client": "^2.26.0",
     "apollo-server": "^2.25.2",
+    "dataloader": "^2.0.0",
     "graphql": "^15.5.1",
+    "graphql-jit": "^0.5.2",
     "graphql-scalars": "^1.10.0",
-    "uWebSockets.js": "uNetworking/uWebSockets.js#v19.3.0"
+    "uWebSockets.js": "uNetworking/uWebSockets.js#v19.3.0",
+    "zod": "^3.5.1"
   },
   "devDependencies": {
     "@types/node": "^16.0.0",
