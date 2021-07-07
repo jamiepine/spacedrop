@@ -2,7 +2,8 @@
   "name": "spacedrop",
   "private": true,
   "scripts": {
-    "api": "yarn workspace @spacedrop/api"
+    "api": "yarn workspace @spacedrop/api",
+    "app": "yarn workspace @spacedrop/spacedrop"
   },
   "devDependencies": {
     "lerna": "^4.0.0"
