@@ -4,8 +4,7 @@
   "scripts": {
     "api": "yarn workspace api",
     "desktop": "yarn workspace desktop",
-    "dev": "concurrently \"yarn dev:backend\" \"yarn desktop dev\"",
-    "dev:backend": "docker compose -f docker-compose.dev.yml up"
+    "dev": "concurrently \"docker-compose -f docker-compose.dev.yml up\" \"yarn api dev\" \"yarn desktop dev\""
   },
   "workspaces": {
     "packages": [

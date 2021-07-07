@@ -7,12 +7,6 @@ app.dock?.hide();
 
 let mainWindow: BrowserWindow;
 
-let forceQuit = false;
-
-app.on('before-quit', () => {
-  forceQuit = true;
-});
-
 async function createWindow() {
   app.dock?.hide();
   mainWindow = new BrowserWindow({
@@ -34,23 +28,16 @@ async function createWindow() {
   });
   app.dock?.hide();
 
-  mainWindow.on('close', (e) => {
-    if (forceQuit) return;
-
-    e.preventDefault();
-    mainWindow.hide();
-  });
-
   if (isDev) {
     mainWindow.loadURL('http://localhost:3000/index.html');
-    const {
-      default: installDevtools,
-      REACT_DEVELOPER_TOOLS,
-      APOLLO_DEVELOPER_TOOLS
-    } = await import('electron-devtools-installer');
+    const { default: installDevtools, REACT_DEVELOPER_TOOLS } = await import(
+      'electron-devtools-installer'
+    );
 
-    await installDevtools([REACT_DEVELOPER_TOOLS, APOLLO_DEVELOPER_TOOLS]);
-  } else mainWindow.loadURL(`file://${__dirname}/../index.html`);
+    await installDevtools(REACT_DEVELOPER_TOOLS);
+  } else {
+    mainWindow.loadURL(`file://${__dirname}/../index.html`);
+  }
 
   mainWindow.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true });
 }
@@ -68,4 +55,10 @@ app.on('ready', () => {
     else mainWindow!.show();
   });
   if (!ret) console.log('registration failed');
+});
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
 });

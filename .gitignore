@@ -2,5 +2,4 @@ node_modules
 .env
 tmp
 temp
-build
-yarn-error.log
+.DS_Store
