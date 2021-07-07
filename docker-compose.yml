@@ -1,0 +1,25 @@
+version: "3"
+services:
+  postgres:
+    image: postgres:13.3
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: spacedrop
+    ports:
+      - "0.0.0.0:5432:5432"
+    command:
+      - "postgres"
+      - "-c"
+      - "log_statement=all"
+
+  api:
+    image: node:15
+    restart: always
+    ports:
+      - "0.0.0.0:3000:3000"
+    volumes:
+      - .:/srv/api:rw
+    working_dir: /srv/api
+    command: yarn api dev
