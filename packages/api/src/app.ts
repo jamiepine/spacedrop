@@ -2,6 +2,10 @@ import { App, DEDICATED_COMPRESSOR_3KB } from 'uWebSockets.js';
 
 import { builder, Context } from './builder';
 
+import './modules';
+
+import '../scripts/graphql';
+
 const schema = builder.toSchema({});
 
 const server = App();
