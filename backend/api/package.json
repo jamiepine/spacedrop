@@ -1,0 +1,26 @@
+{
+  "name": "@spacedrop/api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "dependencies": {
+    "@giraphql/core": "^2.10.0",
+    "@giraphql/plugin-dataloader": "^2.5.4",
+    "@giraphql/plugin-scope-auth": "^2.5.0",
+    "@giraphql/plugin-simple-objects": "^2.4.2",
+    "@giraphql/plugin-validation": "^2.6.1",
+    "apollo-server": "^2.25.2",
+    "graphql": "^15.5.1",
+    "graphql-scalars": "^1.10.0",
+    "uWebSockets.js": "uNetworking/uWebSockets.js#v19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.0.0",
+    "nodemon": "^2.0.9",
+    "prisma": "^2.26.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.5"
+  }
+}
