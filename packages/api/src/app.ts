@@ -1,29 +1,13 @@
-import { App, DEDICATED_COMPRESSOR_3KB } from 'uWebSockets.js';
+import uWS from "uWebSockets.js";
+import { makeBehavior } from "graphql-ws/lib/use/uWebSockets";
+import { builder } from "./builder";
 
-import { builder, Context } from './builder';
+import "./modules";
 
-import './modules';
-
-import '../scripts/graphql';
-
-const schema = builder.toSchema({});
-
-const server = App();
-
-async function main() {
-  server.ws('/graphql', {
-    idleTimeout: 32,
-    maxBackpressure: 1024,
-    maxPayloadLength: 512,
-    compression: DEDICATED_COMPRESSOR_3KB,
-    
-    message: (ws, msg, isBinary) => {
-      console.log(msg);
-    }
+uWS
+  .App()
+  .ws("/graphql", makeBehavior({ schema: builder.toSchema({}) }))
+  .get("/test", (res) => res.end("bruh"))
+  .listen(1500, (socket) => {
+    if (socket) console.log("Listening on port 1500");
   });
-  server.listen(1500, (socket) => {
-    if (socket) console.log(`Up and running`, socket);
-  });
-}
-
-main();

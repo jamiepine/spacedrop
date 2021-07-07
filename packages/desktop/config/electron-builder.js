@@ -1,7 +1,7 @@
 module.exports = {
   appId: 'co.spacedrop.desktop',
   productName: 'SpaceDrop',
-  files: ['build/**/*'],
+  files: ['build/**/*', '!node_modules'],
   directories: {
     buildResources: 'electron/resources'
   },
