@@ -21,12 +21,14 @@ async function createWindow() {
     icon: path.join(__dirname, './assets', 'app.icns'),
     blurType: 'blurbehind',
     blurGnomeSigma: 100,
-    blurCornerRadius: 40,
+    blurCornerRadius: 10,
     vibrancy: 'fullscreen-ui',
     show: false,
     skipTaskbar: true
   });
   app.dock?.hide();
+
+  mainWindow.setVisibleOnAllWorkspaces(true);
 
   if (isDev) {
     mainWindow.loadURL('http://localhost:3000/index.html');

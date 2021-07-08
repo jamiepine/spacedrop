@@ -57,10 +57,10 @@ const FileViewContainer = styled.div`
   height: 100vh;
   width: 100vw;
   padding: 10px 15px;
+  background-color: ${(props) => props.theme.background + '40'};
 `;
 const Content = styled.div`
   font-size: 20px;
-  /* background-color: ${(props) => props.theme.background + '40'}; */
 
   flex: 1;
   padding: 15px 15px;
@@ -91,8 +91,11 @@ const SearchBar = styled.input`
   margin: 0 10px;
   margin-right: 30px;
   border-width: 0px;
-  border-bottom: 2px solid transparent;
+  /* border-bottom: 2px solid transparent; */
   color: ${({ theme }) => theme.textOuter};
+  ::placeholder {
+    color: ${({ theme }) => theme.textOuter};
+  }
   box-sizing: border-box;
   transition: border 50ms ease-out;
   :focus {

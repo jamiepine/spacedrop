@@ -22,11 +22,13 @@ export default function (props: ContactCardProps) {
   return (
     <ContactBody ref={dropZone} hover={hover}>
       <Avatar src={props.avatar} />
-      <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'row', padding:'8px 0px' }}>
+      <div
+        style={{ display: 'flex', alignItems: 'center', flexDirection: 'row', padding: '8px 0px' }}
+      >
         <h2 style={{ fontFamily: 'Whitney', fontWeight: 'bold', margin: 0 }}>{props.name}</h2>
         <OnlineIndicator />
       </div>
-      <span style={{marginTop: -5}}>#23909</span>
+      {/* <span style={{marginTop: -5}}>#23909</span> */}
       <div style={{ flexGrow: 1 }} />
     </ContactBody>
   );
@@ -34,8 +36,8 @@ export default function (props: ContactCardProps) {
 
 const OnlineIndicator = styled.div`
   border-radius: 50%;
-  height: 15px;
-  width: 15px;
+  height: 10px;
+  width: 10px;
   /* margin-top: 8px; */
   margin-left: 5px;
   background-color: #47ce47;
@@ -58,7 +60,7 @@ const ContactBody = styled.div<{ hover: boolean }>`
     /* transform: scale(1.05); */
   }
   h2 {
-    font-size: 19px;
+    font-size: 15px;
     /* margin-top: 5px; */
   }
   span {
