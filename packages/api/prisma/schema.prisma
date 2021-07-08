@@ -21,12 +21,11 @@ model Post {
 }
 
 model Profile {
-  id     Int     @id @default(autoincrement())
+  userId Int     @id @map("user_id")
   bio    String?
-  userId Int     @unique @map("user_id")
   user   User    @relation(fields: [userId], references: [id])
 
-  @@map("profile")
+  @@map("profiles")
 }
 
 model User {

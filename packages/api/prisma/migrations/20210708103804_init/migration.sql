@@ -12,12 +12,11 @@ CREATE TABLE "posts" (
 );
 
 -- CreateTable
-CREATE TABLE "profile" (
-    "id" SERIAL NOT NULL,
-    "bio" TEXT,
+CREATE TABLE "profiles" (
     "user_id" INTEGER NOT NULL,
+    "bio" TEXT,
 
-    PRIMARY KEY ("id")
+    PRIMARY KEY ("user_id")
 );
 
 -- CreateTable
@@ -30,13 +29,10 @@ CREATE TABLE "users" (
 );
 
 -- CreateIndex
-CREATE UNIQUE INDEX "profile.user_id_unique" ON "profile"("user_id");
-
--- CreateIndex
 CREATE UNIQUE INDEX "users.email_unique" ON "users"("email");
 
 -- AddForeignKey
 ALTER TABLE "posts" ADD FOREIGN KEY ("author_id") REFERENCES "users"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "profile" ADD FOREIGN KEY ("user_id") REFERENCES "users"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "profiles" ADD FOREIGN KEY ("user_id") REFERENCES "users"("id") ON DELETE CASCADE ON UPDATE CASCADE;
