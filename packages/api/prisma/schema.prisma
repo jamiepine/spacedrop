@@ -9,20 +9,24 @@ datasource db {
 
 model Post {
   id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
   title     String   @db.VarChar(255)
   content   String?
   published Boolean  @default(false)
-  authorId  Int
+  authorId  Int @map("author_id")
   author    User     @relation(fields: [authorId], references: [id])
+
+  @@map("posts")
 }
 
 model Profile {
   id     Int     @id @default(autoincrement())
   bio    String?
-  userId Int     @unique
+  userId Int     @unique @map("user_id")
   user   User    @relation(fields: [userId], references: [id])
+
+  @@map("profile")
 }
 
 model User {
@@ -31,4 +35,6 @@ model User {
   name    String?
   posts   Post[]
   profile Profile?
+
+  @@map("users")
 }
