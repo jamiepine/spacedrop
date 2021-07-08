@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "target": "ES5",
+    "target": "ES6",
+    "module": "es2020",
     "outDir": "../build/electron",
     "skipLibCheck": true,
     "moduleResolution": "node",

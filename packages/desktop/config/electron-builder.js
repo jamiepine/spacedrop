@@ -1,7 +1,7 @@
 module.exports = {
   appId: 'co.spacedrop.desktop',
   productName: 'SpaceDrop',
-  files: ['build/**/*'],
+  files: ['build/**/*', "!node_modules", "node_modules/glasstron/**/*"],
   directories: {
     buildResources: 'electron/resources'
   },
@@ -11,5 +11,6 @@ module.exports = {
       LSUIElement: 1,
       LSBackgroundOnly: 1
     }
-  }
+  },
+  asar: false
 };

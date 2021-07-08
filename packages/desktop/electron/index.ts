@@ -36,7 +36,7 @@ async function createWindow() {
       'electron-devtools-installer'
     );
 
-    await installDevtools(REACT_DEVELOPER_TOOLS);
+    await installDevtools(REACT_DEVELOPER_TOOLS.id);
   } else {
     mainWindow.loadURL(`file://${__dirname}/../index.html`);
   }

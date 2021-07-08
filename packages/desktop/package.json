@@ -4,17 +4,17 @@
   "author": "SpaceDrop Team",
   "private": true,
   "version": "0.0.0",
-  "main": "build/electron/index.js",
+  "main": "build/electron/index.cjs",
   "scripts": {
     "dev": "concurrently \"yarn dev:app\" \"yarn dev:electron\"",
     "dev:app": "vite",
     "dev:electron": "yarn build:electron && electron .",
     "build": "rimraf build && concurrently \"yarn build:app\" \"yarn build:electron\"",
     "build:app": "tsc && vite build",
-    "build:electron": "tsc -p electron/tsconfig.json",
+    "build:electron": "cd electron && vite build",
     "serve": "vite preview",
     "pack": "electron-builder --dir",
-    "dist": "yarn build && rimraf dist && electron-builder --config config/electron-builder.js"
+    "dist": "yarn build:app && rimraf dist && electron-builder --config config/electron-builder.js"
   },
   "dependencies": {
     "@apollo/client": "^3.3.21",

@@ -4,7 +4,8 @@
   "scripts": {
     "api": "yarn workspace api",
     "desktop": "yarn workspace desktop",
-    "dev": "concurrently \"docker-compose -f docker-compose.dev.yml up\" \"yarn desktop dev\""
+    "dev": "concurrently \"yarn dev:backend\" \"yarn desktop dev\"",
+    "dev:backend": "docker-compose -f docker-compose.dev.yml up"
   },
   "workspaces": {
     "packages": [
@@ -12,7 +13,9 @@
     ],
     "nohoist": [
       "**/electron",
-      "**/electron/**"
+      "**/electron/**",
+      "**/glasstron",
+      "**/glasstron/**"
     ]
   },
   "devDependencies": {
