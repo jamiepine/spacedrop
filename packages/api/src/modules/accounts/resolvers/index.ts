@@ -1,2 +1,0 @@
-import './getHello';
-import "./sendHello"

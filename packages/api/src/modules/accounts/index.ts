@@ -1,1 +1,1 @@
-import './resolvers';
+export * from "./objects";

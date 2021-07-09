@@ -1,8 +1,7 @@
-import { builder } from "~/src/builder";
+import builder from "~/builder";
 
-export const TestResult = builder.simpleObject('TestResult', {
+builder.objectType("Account", {
   fields: (t) => ({
-    hello: t.boolean(),
-    goodbye: t.boolean()
+    username: t.exposeString("username"),
   }),
 });

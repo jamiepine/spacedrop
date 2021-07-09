@@ -7,33 +7,9 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Post {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("updated_at")
-  title     String   @db.VarChar(255)
-  content   String?
-  published Boolean  @default(false)
-  authorId  Int @map("author_id")
-  author    User     @relation(fields: [authorId], references: [id])
-
-  @@map("posts")
-}
-
-model Profile {
-  userId Int     @id @map("user_id")
-  bio    String?
-  user   User    @relation(fields: [userId], references: [id])
-
-  @@map("profiles")
-}
-
-model User {
-  id      Int      @id @default(autoincrement())
-  email   String   @unique
-  name    String?
-  posts   Post[]
-  profile Profile?
-
-  @@map("users")
+model Account {
+  username String @id
+  passwordHash String @map("password_hash")
+  
+  @@map("account")
 }

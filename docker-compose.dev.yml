@@ -1,7 +1,7 @@
 version: "3"
 services:
   postgres:
-    image: postgres:13.3
+    image: postgres:alpine
     restart: always
     environment:
       POSTGRES_USER: postgres
@@ -13,13 +13,9 @@ services:
       - "postgres"
       - "-c"
       - "log_statement=all"
-
-  api:
-    image: node:15
+  
+  redis: 
+    image: redis:alpine
     restart: always
-    ports:
-      - "0.0.0.0:1500:1500"
-    volumes:
-      - .:/srv/api:rw
-    working_dir: /srv/api
-    command: yarn api dev
+    ports: 
+      - '0.0.0.0:6379:6379'
