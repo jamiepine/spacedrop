@@ -21,15 +21,17 @@ const Main = () => {
         <ContactCard name="weffeef" avatar="https://i.pravatar.cc/303" />
       </Content>
       <FooterArea>
-        <div style={{ width: 40, height: 40 }}>
+        <SpacedropLogo>Spacedrop</SpacedropLogo>
+        {/* <div style={{ width: 40, height: 40 }}>
           <img src="images/logo.png" alt="space-logo" style={{ width: 40, height: 40 }} />
         </div>
-        <div style={{ marginLeft: 10, flex: 1 }}>
+        
           <span>
             <Lock weight="bold" style={{ marginBottom: -2, marginRight: 5 }} />
             Secured with the Signal Protocol
           </span>
-        </div>
+        </div> */}
+        <div style={{ marginLeft: 10, flex: 1 }} />
         <GearSix size={30} weight="bold" style={{ marginLeft: 40 }} />
       </FooterArea>
     </FileViewContainer>
@@ -39,7 +41,7 @@ const Main = () => {
 export default Main;
 
 const FooterArea = styled.div`
-  padding: 0 30px 22px 0;
+  /* padding: 0 30px 22px 0; */
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -70,6 +72,11 @@ const Content = styled.div`
   align-items: center;
   overflow-y: auto;
   overflow-x: hidden;
+`;
+
+const SpacedropLogo = styled.h2`
+  font-weight: normal;
+  font-size: 22px;
 `;
 
 const SearchBarArea = styled.div`
