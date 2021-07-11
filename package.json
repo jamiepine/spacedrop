@@ -4,6 +4,7 @@
   "scripts": {
     "api": "yarn workspace api",
     "desktop": "yarn workspace desktop",
+    "landing": "yarn workspace landing",
     "dev": "concurrently \"yarn dev:backend\" \"yarn desktop dev\"",
     "dev:backend": "docker-compose -f docker-compose.dev.yml up"
   },

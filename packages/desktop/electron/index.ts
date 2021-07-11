@@ -21,7 +21,7 @@ async function createWindow() {
     icon: path.join(__dirname, './assets', 'app.icns'),
     blurType: 'blurbehind',
     blurGnomeSigma: 100,
-    blurCornerRadius: 10,
+    blurCornerRadius: 40,
     vibrancy: 'fullscreen-ui',
     show: false,
     skipTaskbar: true

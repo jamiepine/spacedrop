@@ -11,28 +11,35 @@ export default function (props: ContactCardProps) {
   const [hover, setHover] = useState(false);
 
   useEffect(() => {
-    // dropZone.current.addEventListener("dragenter", () => setHover(true), false);
-    // dropZone.current.addEventListener(
-    //   "dragleave",
-    //   () => setHover(false),
-    //   false
-    // );
+    if (dropZone.current !== null) {
+      dropZone.current.addEventListener('dragenter', () => setHover(true), false);
+      dropZone.current.addEventListener('dragleave', () => setHover(false), false);
+    }
   }, []);
 
   return (
     <ContactBody ref={dropZone} hover={hover}>
       <Avatar src={props.avatar} />
-      <div
-        style={{ display: 'flex', alignItems: 'center', flexDirection: 'row', padding: '8px 0px' }}
-      >
-        <h2 style={{ fontFamily: 'Whitney', fontWeight: 'bold', margin: 0 }}>{props.name}</h2>
+      <MetaArea>
+        <DisplayName>{props.name}</DisplayName>
         <OnlineIndicator />
-      </div>
-      {/* <span style={{marginTop: -5}}>#23909</span> */}
+      </MetaArea>
       <div style={{ flexGrow: 1 }} />
     </ContactBody>
   );
 }
+
+const MetaArea = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 8px 0;
+`;
+
+const DisplayName = styled.h2`
+  font-weight: medium;
+  margin: 0;
+`;
 
 const OnlineIndicator = styled.div`
   border-radius: 50%;
@@ -82,7 +89,7 @@ const ContactBody = styled.div<{ hover: boolean }>`
 `;
 
 const Avatar = styled.img`
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
 `;

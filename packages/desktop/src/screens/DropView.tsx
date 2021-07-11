@@ -6,15 +6,23 @@ import ContactCard from '../components/Contact';
 const Main = () => {
   return (
     <FileViewContainer>
-      <SearchBarArea>
+      {/* <SearchBarArea>
         <MagnifyingGlass
           weight="bold"
           size={30}
           style={{ transform: 'translate(0, -3px)', minWidth: 30, minHeight: 30 }}
         />
         <SearchBar placeholder="Search Contacts" autoFocus />
-      </SearchBarArea>
+      </SearchBarArea> */}
       <Content>
+        <ContactCard name="jamie" avatar="https://i.pravatar.cc/299" />
+        <ContactCard name="xQc" avatar="https://i.pravatar.cc/301" />
+        <ContactCard name="jeff01" avatar="https://i.pravatar.cc/302" />
+        <ContactCard name="weffeef" avatar="https://i.pravatar.cc/303" />
+        <ContactCard name="jamie" avatar="https://i.pravatar.cc/299" />
+        <ContactCard name="xQc" avatar="https://i.pravatar.cc/301" />
+        <ContactCard name="jeff01" avatar="https://i.pravatar.cc/302" />
+        <ContactCard name="weffeef" avatar="https://i.pravatar.cc/303" />
         <ContactCard name="jamie" avatar="https://i.pravatar.cc/299" />
         <ContactCard name="xQc" avatar="https://i.pravatar.cc/301" />
         <ContactCard name="jeff01" avatar="https://i.pravatar.cc/302" />
@@ -45,6 +53,7 @@ const FooterArea = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
+  margin: 0 20px;
   color: ${(props) => props.theme.textOuter};
   p {
     font-size: 15px;
@@ -58,12 +67,11 @@ const FileViewContainer = styled.div`
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  padding: 10px 15px;
+  /* padding: 10px 15px; */
   background-color: ${(props) => props.theme.background + '40'};
 `;
 const Content = styled.div`
   font-size: 20px;
-
   flex: 1;
   padding: 15px 15px;
   display: flex;
