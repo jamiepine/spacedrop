@@ -9,8 +9,8 @@ const Base = () => (
   <div className="antialiased text-gray-600">
     <Meta title={AppConfig.title} description={AppConfig.description} />
     <Hero />
-    <VerticalFeatures />
-    <Banner />
+    {/* <VerticalFeatures /> */}
+    {/* <Banner /> */}
     <Footer />
   </div>
 );

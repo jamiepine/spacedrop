@@ -2,47 +2,56 @@ import Link from 'next/link';
 
 import { Background } from '../background/Background';
 import { Button } from '../button/Button';
-import { HeroOneButton } from '../hero/HeroOneButton';
+import { HeroText } from '../hero/HeroText';
 import { Section } from '../layout/Section';
 import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
 import { Logo } from './Logo';
 
+const HeaderLink = ({ text, link }) => (
+  <li>
+    <Link href={link}>
+      <a>{text}</a>
+    </Link>
+  </li>
+);
+
 const Hero = () => (
-  <Background color="bg-gray-100">
+  <div className="space-gradient bg-gray-100">
     <Section yPadding="py-6">
       <NavbarTwoColumns logo={<Logo xl />}>
-        <li>
-          <Link href="https://github.com/ixartz/Next-JS-Landing-Page-Starter-Template">
-            <a>GitHub</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/">
-            <a>Sign in</a>
-          </Link>
-        </li>
+        <HeaderLink text="Product" link="#" />
+        <HeaderLink text="Download" link="#" />
+        <HeaderLink text="Company" link="#" />
+        <HeaderLink text="Account" link="#" />
       </NavbarTwoColumns>
     </Section>
 
     <Section yPadding="pt-20 pb-32">
-      <HeroOneButton
+      <HeroText
         title={
           <>
-            {'The modern landing page for\n'}
-            <span className="text-primary-500">React developer</span>
+            {'The fastest way to send files '}
+            <span className="text-primary-500">anywhere</span>
           </>
         }
-        description="The easiest way to build React landing page in seconds."
-        button={
+        description="Just press CTRL + Space then drop!"
+      />
+      <div className="flex justify-center">
+        <div className="flex flex-wrap content-around">
           <Link href="https://creativedesignsguru.com/category/nextjs/">
-            <a>
-              <Button xl>Download Your Free Theme</Button>
+            <a className="pr-4">
+              <Button xl>Download For MacOS</Button>
             </a>
           </Link>
-        }
-      />
+          <Link href="https://creativedesignsguru.com/category/nextjs/">
+            <a>
+              <Button xl>Download For Windows</Button>
+            </a>
+          </Link>
+        </div>
+      </div>
     </Section>
-  </Background>
+  </div>
 );
 
 export { Hero };
