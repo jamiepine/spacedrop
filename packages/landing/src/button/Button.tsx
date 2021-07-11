@@ -7,17 +7,17 @@ type IButtonProps = {
 
 const Button = (props: IButtonProps) => {
   const btnClass = className({
-    btn: true,
+    'btn': true,
     'btn-xl': props.xl,
     'btn-base': !props.xl,
-    'btn-primary': true,
+    'btn-primary': true
   });
 
   return (
     <div className={btnClass}>
       {props.children}
 
-      <style jsx>
+      <style>
         {`
           .btn {
             @apply inline-block rounded-md text-center;

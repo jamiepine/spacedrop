@@ -21,7 +21,7 @@ const NavbarTwoColumns = (props: INavbarProps) => (
       </ul>
     </nav>
 
-    <style jsx>
+    <style>
       {`
         .navbar :global(li:not(:first-child)) {
           @apply mt-0;

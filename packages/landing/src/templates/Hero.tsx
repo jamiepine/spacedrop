@@ -1,13 +1,12 @@
 import Link from 'next/link';
 
-import { Background } from '../background/Background';
 import { Button } from '../button/Button';
 import { HeroText } from '../hero/HeroText';
 import { Section } from '../layout/Section';
 import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
 import { Logo } from './Logo';
 
-const HeaderLink = ({ text, link }) => (
+const HeaderLink: React.FC<{ text: string; link: string }> = ({ text, link }) => (
   <li>
     <Link href={link}>
       <a>{text}</a>
