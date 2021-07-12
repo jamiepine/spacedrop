@@ -16,12 +16,11 @@ const NavbarTwoColumns = (props: INavbarProps) => (
     </div>
 
     <nav>
-      <ul className="navbar flex items-center font-medium text-xl text-gray-800">
-        {props.children}
-      </ul>
+      <ul className="navbar flex items-center font-medium text-xl text-white">{props.children}</ul>
     </nav>
 
-    <style>
+    {/* @ts-ignore */}
+    <style jsx>
       {`
         .navbar :global(li:not(:first-child)) {
           @apply mt-0;

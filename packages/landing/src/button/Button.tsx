@@ -16,8 +16,8 @@ const Button = (props: IButtonProps) => {
   return (
     <div className={btnClass}>
       {props.children}
-
-      <style>
+      {/* @ts-ignore */}
+      <style jsx>
         {`
           .btn {
             @apply inline-block rounded-md text-center;
@@ -32,7 +32,7 @@ const Button = (props: IButtonProps) => {
           }
 
           .btn-primary {
-            @apply text-white bg-primary-500;
+            @apply text-white bg-black;
           }
 
           .btn-primary:hover {

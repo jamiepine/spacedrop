@@ -13,7 +13,8 @@ const FooterCopyright = () => (
      * The link doesn't need to appear on every pages, one link on one page is enough.
      * Thank you for your support it'll mean a lot for us.
      */}
-    <style>
+    {/* @ts-ignore */}
+    <style jsx>
       {`
         .footer-copyright :global(a) {
           @apply text-primary-500;

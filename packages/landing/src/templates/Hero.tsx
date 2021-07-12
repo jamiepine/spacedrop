@@ -26,15 +26,12 @@ const Hero = () => (
     </Section>
 
     <Section yPadding="pt-20 pb-32">
-      <HeroText
-        title={
-          <>
-            {'The fastest way to send files '}
-            <span className="text-primary-500">anywhere</span>
-          </>
-        }
-        description="Just press CTRL + Space then drop!"
-      />
+      <header className="text-center">
+        <h1 className="text-5xl text-white font-black whitespace-pre-line leading-hero hero-text-shadow">
+          The fastest way to send files anywhere
+        </h1>
+        <div className="text-white text-2xl mt-4 mb-16">Just press CTRL + Space then drop!</div>
+      </header>
       <div className="flex justify-center">
         <div className="flex flex-wrap content-around">
           <Link href="https://creativedesignsguru.com/category/nextjs/">
