@@ -8,9 +8,15 @@ body {
   font-family: Proxima Nova, Arial, Helvetica, sans-serif;
 }
 
+.hero-bg {
+  background-image: url('/assets/images/bg.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+}
 @responsive {
   .space-gradient {
-    background-image: linear-gradient(to right top, #a55fff, #9750f4, #8a40e9, #7b2fdf, #6d1bd4);
+    background-image: linear-gradient(to left bottom, #a55fff, #9750f4, #8a40e9, #7b2fdf, #6d1bd4);
   }
 
   .hero-text-shadow {
