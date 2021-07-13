@@ -1,5 +1,5 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+
 import { Accordion, Icon } from 'semantic-ui-react';
 
 interface FAQProps {
@@ -9,7 +9,7 @@ interface FAQProps {
 export const FAQ: React.FC<FAQProps> = (props) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const handleClick = (e, titleProps) => {
+  const handleClick = (_: any, titleProps: any) => {
     const { index } = titleProps;
     const newIndex = activeIndex === index ? -1 : index;
 

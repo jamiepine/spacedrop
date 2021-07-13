@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
+import { Section } from '../layout/Section';
 import { Background } from './Background';
 import { CenteredFooter } from './footer/CenteredFooter';
-import { Section } from '../layout/Section';
 import { Logo } from './Logo';
 
 const Footer = () => (
