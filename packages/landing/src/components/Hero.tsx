@@ -1,7 +1,9 @@
 import Link from 'next/link';
+import { CopySimple, Download, Pause, Question, ShieldCheck } from 'phosphor-react';
 import { Button, Icon } from 'semantic-ui-react';
 
 import { Section } from '../layout/Section';
+import { Feature } from './Feature';
 import { Logo } from './Logo';
 import { NavbarTwoColumns } from './NavbarTwoColumns';
 import { Bubbles } from './Particles';
@@ -22,6 +24,7 @@ const Hero = () => (
     <div className="absolute-expand hero-bg" />
     <Section yPadding="py-6">
       <NavbarTwoColumns logo={<Logo xl />}>
+        <HeaderLink text="Pricing" link="#" />
         <HeaderLink text="Earn" link="#" />
         <HeaderLink text="Team" link="#" />
         <HeaderLink text="Privacy" link="#" />
@@ -42,7 +45,7 @@ const Hero = () => (
       <div className="flex justify-center">
         <img alt="appui" width={700} className="mb-5" src="/assets/images/appui.png" />
       </div>
-      <div className="flex justify-center mb-96">
+      <div className="flex justify-center mb-10">
         <div className="flex flex-wrap content-around">
           <Link href="https://creativedesignsguru.com/category/nextjs/">
             <a className="pr-4">
@@ -62,6 +65,33 @@ const Hero = () => (
             </a>
           </Link>
         </div>
+      </div>
+      <div className="flex flex-row  ">
+        <Feature
+          icon={ShieldCheck}
+          title="End-to-end encryption"
+          description="File transfers are secured with the Signal Protocol, the most secure end-to-end encrypted messaging system in existence."
+        />
+        <Feature
+          icon={Pause}
+          title="Auto resume"
+          description="Sending large files? Transfers will pause and resume again if your connection drops."
+        />
+        <Feature
+          icon={CopySimple}
+          title="Clone clipboard"
+          description="Clone the contents of your clipboard with a contact in one click, great for sharing quick information with a friend or co-worker."
+        />
+        <Feature
+          icon={Download}
+          title="Download later"
+          description="We don’t store your files on our servers. Unless you want to send a file to an offline contact, in which case we’ll keep it (encrypted) until they’re back online to receive it."
+        />
+        <Feature
+          icon={Question}
+          title="Temp drop"
+          description="Can’t see who you want to send to yet? Need to group files together to send at once? Drop in the grey space between to queue a transfer."
+        />
       </div>
     </Section>
   </div>
