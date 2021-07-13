@@ -16,18 +16,20 @@ export const FAQ: React.FC<FAQProps> = (props) => {
     setActiveIndex(newIndex);
   };
   return (
-    <Accordion style={{ margin: 10 }} styled>
-      {props.data.map((item, index) => (
-        <>
-          <Accordion.Title active={activeIndex === index} index={index} onClick={handleClick}>
-            <Icon name="dropdown" />
-            {item.q}
-          </Accordion.Title>
-          <Accordion.Content active={activeIndex === index}>
-            <p>{item.a}</p>
-          </Accordion.Content>
-        </>
-      ))}
-    </Accordion>
+    <div className="max-w-screen-lg mx-auto px-3 pt-20 pb-32">
+      <Accordion style={{ margin: 10 }}>
+        {props.data.map((item, index) => (
+          <>
+            <Accordion.Title active={activeIndex === index} index={index} onClick={handleClick}>
+              <Icon name="dropdown" />
+              {item.q}
+            </Accordion.Title>
+            <Accordion.Content active={activeIndex === index}>
+              <p>{item.a}</p>
+            </Accordion.Content>
+          </>
+        ))}
+      </Accordion>
+    </div>
   );
 };
