@@ -5,15 +5,19 @@
     "api": "yarn workspace api",
     "desktop": "yarn workspace desktop",
     "landing": "yarn workspace landing",
-    "dev": "concurrently \"yarn dev:backend\" \"yarn desktop dev\"",
-    "dev:nico": "concurrently \"docker-compose -f docker-compose.dev-nico.yml up\" \"yarn api dev\" \"yarn desktop dev\"",
+    "dev": "yarn api prisma:client && concurrently \"docker-compose -f docker-compose.dev.yml up\" \"yarn api dev\" \"yarn desktop dev\"",
     "dev:backend": "docker-compose -f docker-compose.dev.yml up"
   },
   "workspaces": {
     "packages": [
+      "apps/*",
       "packages/*"
     ],
     "nohoist": [
+      "**/@prisma/**",
+      "**/@prisma",
+      "**/prisma/**",
+      "**/prisma",
       "**/electron",
       "**/electron/**",
       "**/glasstron",

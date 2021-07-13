@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://postgres:postgres@localhost:5432/spacedrop"
+}
+
+model Account {
+  username String @id
+  passwordHash String @map("password_hash")
+  
+  @@map("account")
+}
