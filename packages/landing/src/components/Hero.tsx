@@ -5,6 +5,7 @@ import { Section } from '../layout/Section';
 import { NavbarTwoColumns } from './NavbarTwoColumns';
 import { Logo } from './Logo';
 import { Button } from 'semantic-ui-react';
+import { Bubbles } from './Particles';
 
 const HeaderLink: React.FC<{ text: string; link: string }> = ({ text, link }) => (
   <li>
@@ -16,9 +17,10 @@ const HeaderLink: React.FC<{ text: string; link: string }> = ({ text, link }) =>
 
 const Hero = () => (
   <div className="overflow-hidden relative">
-    <div className="absolute-expand space-gradient"></div>
+    <div className="absolute-expand space-gradient">
+      <Bubbles />
+    </div>
     <div className="absolute-expand hero-bg"></div>
-
     <Section yPadding="py-6">
       <NavbarTwoColumns logo={<Logo xl />}>
         <HeaderLink text="Download" link="#" />
@@ -39,9 +41,9 @@ const Hero = () => (
         </div>
       </header>
       <div className="flex justify-center">
-        <img width={600} className="mb-5" src="/assets/images/appui.png" />
+        <img width={700} className="mb-5" src="/assets/images/appui.png" />
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center mb-96">
         <div className="flex flex-wrap content-around">
           <Link href="https://creativedesignsguru.com/category/nextjs/">
             <a className="pr-4">

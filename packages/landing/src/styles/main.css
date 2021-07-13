@@ -35,7 +35,7 @@ i {
     background-position: center bottom;
     background-repeat: no-repeat;
     background-origin: content-box;
-    background-size: 160%;
+    background-size: cover;
     mix-blend-mode: luminosity;
     opacity: 0.3;
   }
