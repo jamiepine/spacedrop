@@ -16,7 +16,7 @@ export const FAQ: React.FC<FAQProps> = (props) => {
     setActiveIndex(newIndex);
   };
   return (
-    <div className="max-w-screen-lg mx-auto px-3 pt-20 pb-32">
+    <div className="max-w-screen-xl mx-auto px-3 pt-20 pb-32">
       <Accordion style={{ margin: 10 }}>
         {props.data.map((item, index) => (
           <>

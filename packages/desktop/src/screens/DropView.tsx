@@ -74,10 +74,13 @@ const Content = styled.div`
   font-size: 20px;
   flex: 1;
   padding: 15px 15px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  justify-content: start;
+  /* flex-wrap: wrap; */
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 250px));
+  /* justify-content: center;
+  align-items: center; */
   overflow-y: auto;
   overflow-x: hidden;
 `;

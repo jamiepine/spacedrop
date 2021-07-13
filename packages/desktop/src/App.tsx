@@ -8,7 +8,7 @@ import DropView from './screens/DropView';
 import { client } from './utils/apollo';
 
 const Container = styled.div`
-  /* background-color: ${(props) => props.theme.background + '40'}; */
+  background-color: ${(props) => props.theme.background + '90'};
   color: ${(props) => props.theme.text};
   font-family: Whitney;
   user-select: none;
