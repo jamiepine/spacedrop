@@ -1,7 +1,1 @@
-import builder from "~/builder";
-
-builder.objectType("Account", {
-  fields: (t) => ({
-    username: t.exposeString("username"),
-  }),
-});
+export const yes = 'fuck off';

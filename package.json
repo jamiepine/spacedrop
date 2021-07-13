@@ -6,6 +6,7 @@
     "desktop": "yarn workspace desktop",
     "landing": "yarn workspace landing",
     "dev": "concurrently \"yarn dev:backend\" \"yarn desktop dev\"",
+    "dev:nico": "concurrently \"docker-compose -f docker-compose.dev-nico.yml up\" \"yarn api dev\" \"yarn desktop dev\"",
     "dev:backend": "docker-compose -f docker-compose.dev.yml up"
   },
   "workspaces": {

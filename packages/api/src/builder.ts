@@ -7,12 +7,10 @@ import ErrorsPlugin from "@giraphql/plugin-errors";
 
 import { GraphQLJSONObject } from "graphql-scalars";
 import { FastifyRequest, FastifyReply } from "fastify";
-import { Account } from "@prisma/client";
 
 export interface Context {
   req: FastifyRequest;
   res: FastifyReply<any>;
-  account: Account;
 }
 
 const builder = new SchemaBuilder<{
@@ -24,9 +22,6 @@ const builder = new SchemaBuilder<{
     DateTime: { Input: Date; Output: Date };
     JSONObject: { Input: Record<string, unknown>; Output: object };
     BigInt: { Input: bigint; Output: number };
-  };
-  Objects: {
-    Account: Account;
   };
   AuthScopes: {
     authenticated: boolean;
@@ -40,7 +35,7 @@ const builder = new SchemaBuilder<{
     SimpleObjectsPlugin,
   ],
   authScopes(ctx): { authenticated: boolean } {
-    return { authenticated: !!ctx.account };
+    return { authenticated: false };
   },
 });
 
