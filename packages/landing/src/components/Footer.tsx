@@ -1,6 +1,7 @@
-import Link from 'next/link';
-import { At, HandGrabbing, InstagramLogo, TwitterLogo, YoutubeLogo } from 'phosphor-react';
 import React from 'react';
+import Link from 'next/link';
+
+import { At, HandGrabbing, InstagramLogo, TwitterLogo, YoutubeLogo } from 'phosphor-react';
 
 import { Section } from '../layout/Section';
 import { Background } from './Background';
