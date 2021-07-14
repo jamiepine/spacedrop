@@ -39,7 +39,7 @@ const Base = () => (
         rate="monthly"
         benefits={[
           { title: 'Super fast transfer speed' },
-          { title: '1TB monthly bandwidth' },
+          { title: '300GB monthly bandwidth' },
           { title: 'Unlimited filesize' },
           { title: 'Send to offline contacts' },
           { title: 'Vanity URL spacedrop.to/yourname' },

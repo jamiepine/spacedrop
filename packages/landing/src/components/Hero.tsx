@@ -90,7 +90,7 @@ export const Hero: React.FC = () => (
       <div className="flex flex-grow flex-wrap">
         <Feature
           icon={ShieldCheck}
-          title="End-to-end encryption"
+          title="End-to-end encrypted"
           description="File transfers are secured with the Signal Protocol, the most secure end-to-end encrypted messaging system in existence."
         />
         <Feature
@@ -110,7 +110,7 @@ export const Hero: React.FC = () => (
         />
         <Feature
           icon={Question}
-          title="Temp drop"
+          title="Temporary drop zone"
           description="Can’t see who you want to send to yet? Need to group files together to send at once? Drop in the grey space between to queue a transfer."
         />
       </div>
