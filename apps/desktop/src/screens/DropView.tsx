@@ -29,9 +29,10 @@ const Main = () => {
         <ContactCard name="jeff01" avatar="https://i.pravatar.cc/302" />
         <ContactCard name="weffeef" avatar="https://i.pravatar.cc/303" />
       </Content>
-      <FooterArea onClick={() => {
+      <FooterArea onClick={async () => {
         console.log('calling');
-        call('createAccount', { email: "contact@itsrems.com" });
+        const result = await call('createAccount', { email: "contact@itsrems.com" });
+        console.log(result);
       }}>
         <SpacedropLogo>Spacedrop</SpacedropLogo>
         {/* <div style={{ width: 40, height: 40 }}>

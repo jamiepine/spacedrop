@@ -1,7 +1,7 @@
 const uri = 'ws://localhost:1500';
 
 export interface ActionReturn {
-  status: number | string;
+  status: 'success' | 'error' | 'timeout';
   data?: any;
 }
 
@@ -35,21 +35,24 @@ export class SpaceLink {
   }
 
   public async Call (action: string, payload: any): Promise<ActionReturn> {
-    return await new Promise(async (resolve) => {
-      // if (!await this.waitForReady()) return resolve({ status: 'timeout', data: '' });
-      this.client.send(JSON.stringify({
-        action,
-        data: payload
-      }))
-      let to = setTimeout(() => (resolve({ status: 'timeout', data: '' })), 30000);
-      const onReturn = (data: any) => {
-        clearTimeout(to);
-        this.off(action, onReturn);
-        if (!data) data = { status: 'unknown', data: 'nothing_returned' };
-        return resolve(data);
-      };
-      this.on(`${action}-return`, onReturn);
-    });
+    if (!await this.waitForReady()) return { status: 'timeout', data: '' };
+    return await Promise.race([
+      new Promise<any>((resolve) => {
+        setTimeout(resolve, 30 * 1000);
+      }),
+      new Promise<ActionReturn>(async (resolve) => {
+        this.client.send(JSON.stringify({
+          action,
+          data: payload
+        }))
+        const onReturn = (data: any) => {
+          this.off(action, onReturn);
+          if (!data) data = { status: 'error', data: 'unknown_error' } as ActionReturn;
+          return resolve(data);
+        };
+        this.on(`${action}-return`, onReturn);
+      })
+    ]);
   }
 
   public Listen () {
@@ -85,7 +88,25 @@ export class SpaceLink {
     }
   }
 
-  
+  private async waitForReady () {
+    return await new Promise((resolve) => {
+      if (!this.ready) this.connect();
+      if (this.ready) return resolve(true);
+      let int: any = undefined;
+      let tries = 0;
+      const checkInit = () => {
+        tries++;
+        if (tries > 3) {
+          clearInterval(int);
+          return resolve(false);
+        }
+        if (this.ready) {
+          return resolve(true);
+        }
+      }
+      int = setInterval(checkInit, 1500);
+    });
+  }
 
   private globalBind () {
     try {

@@ -9,7 +9,10 @@ export async function wsMessageHandler (ws: uWS.WebSocket, message: ArrayBuffer,
     const runnable = actions[action];
     if (runnable) {
       const result = await runnable(payload);
-      console.log(result);
+      if (result) ws.send(JSON.stringify({
+        action: `${action}-return`,
+        data: result
+      }), isBinary);
     }
   } catch (error) {
     
