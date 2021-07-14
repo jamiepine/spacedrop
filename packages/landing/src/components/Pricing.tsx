@@ -44,7 +44,7 @@ export const PriceBenefit: React.FC<PriceBenefitProps> = (props) => {
 interface PriceListingProps {
   cost?: number;
   recommended?: boolean;
-  rate: 'monthly' | 'none';
+  rate?: 'monthly' | 'none';
   name: string;
   benefits: Benefit[];
 }
