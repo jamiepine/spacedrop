@@ -17,16 +17,8 @@ const Meta = (props: IMetaProps) => {
     <>
       <Head>
         <meta charSet="UTF-8" key="charset" />
-        <meta
-          name="viewport"
-          content="width=device-width,initial-scale=1"
-          key="viewport"
-        />
-        <link
-          rel="apple-touch-icon"
-          href={`${router.basePath}/apple-touch-icon.png`}
-          key="apple"
-        />
+        <meta name="viewport" content="width=device-width,initial-scale=1" key="viewport" />
+        <link rel="apple-touch-icon" href={`${router.basePath}/apple-touch-icon.png`} key="apple" />
         <link
           rel="icon"
           type="image/png"
@@ -41,11 +33,7 @@ const Meta = (props: IMetaProps) => {
           href={`${router.basePath}/favicon-16x16.png`}
           key="icon16"
         />
-        <link
-          rel="icon"
-          href={`${router.basePath}/favicon.ico`}
-          key="favicon"
-        />
+        <link rel="icon" href={`${router.basePath}/favicon.ico`} key="favicon" />
       </Head>
       <NextSeo
         title={props.title}
@@ -57,6 +45,7 @@ const Meta = (props: IMetaProps) => {
           url: props.canonical,
           locale: AppConfig.locale,
           site_name: AppConfig.site_name,
+          images: [{ url: `${router.basePath}/og-image.png` }]
         }}
       />
     </>
