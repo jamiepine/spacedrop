@@ -1,6 +1,14 @@
+import React from 'react';
 import Link from 'next/link';
-import { CopySimple, Download, Pause, Question, ShieldCheck } from 'phosphor-react';
-import { Button, Icon } from 'semantic-ui-react';
+import {
+  CopySimple,
+  Download,
+  Pause,
+  Question,
+  ShieldCheck,
+  AppleLogo,
+  WindowsLogo
+} from 'phosphor-react';
 
 import { Section } from '../layout/Section';
 import { Feature } from './Feature';
@@ -15,7 +23,7 @@ const HeaderLink: React.FC<{ text: string; link: string }> = ({ text, link }) =>
   </li>
 );
 
-const Hero = () => (
+export const Hero: React.FC = () => (
   <div className="overflow-hidden relative">
     <div className="absolute-expand space-gradient" style={{ minWidth: 1200 }}>
       <Bubbles />
@@ -31,7 +39,7 @@ const Hero = () => (
           </Link>
         </div>
         <nav>
-          <ul className="hidden navbar flex items-center font-medium text-xl text-white">
+          <ul className="flex navbar items-center font-medium text-xl text-white">
             <HeaderLink text="Privacy" link="#" />
             <HeaderLink text="Pricing" link="#" />
             <HeaderLink text="Earn" link="#" />
@@ -58,20 +66,26 @@ const Hero = () => (
       <div className="flex justify-center mb-2">
         <div className="flex flex-col md:flex-row w-full md:w-auto">
           <Link href="#">
-            <a className="m-1">
-              <Button size="large" className="w-full">
-                <Icon color="black" name="apple" size="large" style={{ marginTop: -7 }} /> Download
-                for macOS
-              </Button>
-            </a>
+            <button className="m-1 flex flex-row rounded-lg px-4 py-2 bg text-black font-bold justify-center items-center bg-white hover:bg-gray-200">
+              <svg viewBox="0 0 842 1e3" height={23} className="mr-3">
+                <path
+                  // fill="white"
+                  d="M702 960c-54.2 52.6-114 44.4-171 19.6-60.6-25.3-116-26.9-180 0-79.7 34.4-122 24.4-170-19.6-271-279-231-704 77-720 74.7 4 127 41.3 171 44.4 65.4-13.3 128-51.4 198-46.4 84.1 6.8 147 40 189 99.7-173 104-132 332 26.9 396-31.8 83.5-72.6 166-141 227zM423 237C414.9 113 515.4 11 631 1c15.9 143-130 250-208 236z"
+                />
+              </svg>
+              <span className="text-xl">Download for macOS</span>
+            </button>
           </Link>
           <Link href="#">
-            <a className="m-1">
-              <Button size="large" className="w-full">
-                <Icon color="black" name="windows" size="large" style={{ marginTop: -7 }} />
-                Download for Windows
-              </Button>
-            </a>
+            <button className="m-1 flex flex-row rounded-lg px-4 py-2 bg text-black font-bold justify-center items-center bg-white hover:bg-gray-200">
+              <svg viewBox="0 0 80 86" height={23} className="mr-3">
+                <path
+                  d="M 0,12.40183 35.68737,7.5416 35.70297,41.96435 0.03321,42.16748 z m 35.67037,33.52906 0.0277,34.45332 -35.66989,-4.9041 -0.002,-29.77972 z M 39.99644,6.90595 87.31462,0 l 0,41.527 -47.31818,0.37565 z M 87.32567,46.25471 87.31457,87.59463 39.9964,80.91625 39.9301,46.17767 z"
+                  id="path13"
+                />
+              </svg>
+              <span className="text-xl">Download for Windows</span>
+            </button>
           </Link>
         </div>
       </div>
@@ -106,5 +120,3 @@ const Hero = () => (
     </Section>
   </div>
 );
-
-export { Hero };
