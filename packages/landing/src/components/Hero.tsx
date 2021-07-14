@@ -17,7 +17,7 @@ const HeaderLink: React.FC<{ text: string; link: string }> = ({ text, link }) =>
 
 const Hero = () => (
   <div className="overflow-hidden relative">
-    <div className="absolute-expand space-gradient" style={{ minWidth: 900 }}>
+    <div className="absolute-expand space-gradient" style={{ minWidth: 1200 }}>
       <Bubbles />
     </div>
     <div className="absolute-expand hero-bg" />
@@ -42,9 +42,9 @@ const Hero = () => (
       </div>
     </Section>
 
-    <Section yPadding="pt-5 md:pt-10 pb-32">
+    <Section yPadding="pt-5 md:pt-10 pb-10">
       <header className="text-center">
-        <h1 className="text-5xl leading-none md:text-6xl mx-5 md:mx-0 text-white font-black whitespace-pre-line hero-text-shadow">
+        <h1 className="text-4xl leading-none md:text-6xl mx-5 md:mx-0 text-white font-black whitespace-pre-line hero-text-shadow">
           The fastest way to send files anywhere.
         </h1>
         <div className="text-white font-medium text-1xl md:text-2xl my-6 md:my-10">
