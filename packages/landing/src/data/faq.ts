@@ -1,7 +1,11 @@
-export default [
+const faq = [
   {
     q: `Can I change the keybind?`,
     a: `Absolutely, you can set your preferred keybind from CTRL + Space to whatever you want in the settings.`
+  },
+  {
+    q: `How is this different to AirDrop?`,
+    a: `Airdrop works only on Apple devices physically nearby—Spacedrop works on all platforms and sends data securely anywhere in the world. It's also much faster to hit CTRL+Space and drop than it is to: *right click* > Share > AirDrop > *select recipient*. The convenience of Spacedrop is unmatched.`
   },
   {
     q: `How fast are transfer speeds?`,
@@ -27,10 +31,12 @@ export default [
   },
   {
     q: `Is the app easy to uninstall?`,
-    a: `Of course, and we don't cry about it with annoying popups either—just drag the app to your trash or use any app removal tool. Theres nothing worse than an app that won't delete.`
+    a: `Of course, and we don't cry about it with annoying popups either—just drag the app to your trash or use any app removal tool. We know theres nothing worse than an app that refuses to go away.`
   },
   {
     q: `What will the mobile app do?`,
-    a: `You'll be notified of incoming transfers, accept them to your phone or another device remotely. You'll of course also be able to initiate transfers via the native share UI and in-app.`
+    a: `You'll be notified of incoming transfers; you could accept them right on your phone or even another device remotely. You'll of course also be able to initiate transfers via the native share UI and in-app. We'll begin working on it once desktop is fully stable!`
   }
 ];
+
+export default faq;
