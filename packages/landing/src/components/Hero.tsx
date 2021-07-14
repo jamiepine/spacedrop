@@ -1,14 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import {
-  CopySimple,
-  Download,
-  Pause,
-  Question,
-  ShieldCheck,
-  AppleLogo,
-  WindowsLogo
-} from 'phosphor-react';
+import { CopySimple, Download, Pause, Question, ShieldCheck } from 'phosphor-react';
 
 import { Section } from '../layout/Section';
 import { Feature } from './Feature';
