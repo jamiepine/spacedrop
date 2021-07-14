@@ -3,14 +3,14 @@ import { AppConfig } from '../utils/AppConfig';
 import { Footer } from '../components/Footer';
 import { Hero } from '../components/Hero';
 import { FAQ } from '../components/FAQ';
-import { PriceListing } from '../components/Pricing';
+import { PriceListing, PricingContainer } from '../components/Pricing';
 import faqData from '../data/faq';
 
 const Base = () => (
-  <div className="antialiased text-gray-600">
+  <div className="antialiased ">
     <Meta title={AppConfig.title} description={AppConfig.description} />
     <Hero />
-    <div className="pt-10 -mt-32 justify-center flex flex-row flex-wrap overflow-hidden">
+    <PricingContainer>
       <PriceListing
         name="pro"
         // cost={2.99}
@@ -21,7 +21,7 @@ const Base = () => (
           { title: '200mb filesize limit' }
         ]}
       />
-      <div className="-mt-10">
+      <div className="lg:-mt-10">
         <PriceListing
           recommended
           name="pro"
@@ -42,11 +42,14 @@ const Base = () => (
         rate="monthly"
         benefits={[
           { title: 'Super fast transfer speed' },
-          { title: '10GB monthly bandwidth' },
-          { title: '200mb filesize limit' }
+          { title: '1TB monthly bandwidth' },
+          { title: 'Unlimited filesize' },
+          { title: 'Send to offline contacts' },
+          { title: 'Vanity URL spacedrop.to/yourname' },
+          { title: 'Ownership of a literal planet with intelligent life' }
         ]}
       />
-    </div>
+    </PricingContainer>
     <FAQ data={faqData} />
     <Footer />
   </div>
