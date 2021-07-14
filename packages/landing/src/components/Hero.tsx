@@ -87,8 +87,8 @@ export const Hero: React.FC = () => (
 
     <Section yPadding="pt-5 md:pt-10 pb-40">
       <header className="text-center">
-        <h1 className="text-4xl leading-none md:text-6xl mx-5 md:mx-0 text-white font-black whitespace-pre-line hero-text-shadow">
-          The fastest way to send files anywhere.
+        <h1 className="text-5xl leading-none md:text-6xl mx-5 md:mx-0 text-white font-black whitespace-pre-line hero-text-shadow">
+          File sharing on a keybind
         </h1>
         <div className="text-white font-medium text-1xl md:text-2xl my-6 md:my-10">
           Just press <span className="button-border">CTRL</span> +{' '}
