@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@prisma/client": "^2.26.0",
+    "@rocketplay/cache": "^1.0.4",
     "dotenv": "^10.0.0",
     "ioredis": "^4.27.6",
     "uWebSockets.js": "uNetworking/uWebSockets.js#v19.3.0",

@@ -13,3 +13,7 @@ model Account {
   
   @@map("account")
 }
+
+model Client {
+  id String @id
+}

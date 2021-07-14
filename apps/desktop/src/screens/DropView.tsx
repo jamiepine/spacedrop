@@ -1,10 +1,13 @@
 import React from 'react';
 import styled, { useTheme } from 'styled-components';
-import { GearSix, MagnifyingGlass, Lock } from 'phosphor-react';
+import { GearSix, MagnifyingGlass, PlusCircle } from 'phosphor-react';
 import ContactCard from '../components/Contact';
 import { call } from '../websocket';
+import { usePulse } from '@pulsejs/react';
+import { KNOWN_CLIENTS } from '../state';
 
 const Main = () => {
+  const contacts = usePulse(KNOWN_CLIENTS);
   return (
     <FileViewContainer>
       {/* <SearchBarArea>
@@ -16,6 +19,11 @@ const Main = () => {
         <SearchBar placeholder="Search Contacts" autoFocus />
       </SearchBarArea> */}
       <Content>
+        {
+          contacts.map((id) => (
+            <ContactCard key={id} name={id} avatar="https://i.pravatar.cc/299" />
+          ))
+        }
         <ContactCard name="jamie" avatar="https://i.pravatar.cc/299" />
         <ContactCard name="xQc" avatar="https://i.pravatar.cc/301" />
         <ContactCard name="jeff01" avatar="https://i.pravatar.cc/302" />

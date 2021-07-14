@@ -43,7 +43,7 @@ export class SpaceLink {
       new Promise<ActionReturn>(async (resolve) => {
         this.client.send(JSON.stringify({
           action,
-          data: payload
+          payload
         }))
         const onReturn = (data: any) => {
           this.off(action, onReturn);
@@ -115,7 +115,6 @@ export class SpaceLink {
       // @ts-ignore
       globalThis.__space_link__app = this;
     } catch (error) {
-      console.log('bing error', error);
       // fail silently
     }
   }
@@ -124,7 +123,7 @@ export class SpaceLink {
 export function spaceLink (): SpaceLink {
   // @ts-ignore
   if (globalThis.__space_link__app) return globalThis.__space_link__app
-  const link = new SpaceLink;
+  const link = new SpaceLink();
   return link;
 }
 

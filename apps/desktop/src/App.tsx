@@ -1,10 +1,13 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-
+import 'isomorphic-fetch';
 import themeDark from './theme/themeDark';
 import Fonts from './theme/fonts';
 import DropView from './screens/DropView';
 import { useEffect } from 'react';
+import { usePulse } from '@pulsejs/react';
+import { MY_CLIENT_ID } from './state';
+import { sendPing } from './ping';
 
 const Container = styled.div`
   /* background-color: ${(props) => props.theme.background + '40'}; */
@@ -17,6 +20,12 @@ const Container = styled.div`
 `;
 
 const App = () => {
+  useEffect(() => {
+    const interval = setInterval(sendPing, 5 * 60 * 100);
+    return () => {
+      clearInterval(interval);
+    }
+  }, []);
   return (
     <ThemeProvider theme={themeDark}>
       <Fonts />

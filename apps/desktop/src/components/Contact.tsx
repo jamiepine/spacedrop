@@ -1,5 +1,8 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
+import { useDropzone } from 'react-dropzone';
 import styled from 'styled-components';
+import { MY_CLIENT_ID } from '../state';
+import { call } from '../websocket';
 
 interface ContactCardProps {
   name: string;
@@ -7,24 +10,26 @@ interface ContactCardProps {
 }
 
 export default function (props: ContactCardProps) {
-  const dropZone = useRef(null);
-  const [hover, setHover] = useState(false);
-
-  useEffect(() => {
-    if (dropZone.current !== null) {
-      dropZone.current.addEventListener('dragenter', () => setHover(true), false);
-      dropZone.current.addEventListener('dragleave', () => setHover(false), false);
-    }
+  const onDrop = useCallback(async (acceptedFiles) => {
+    const file = acceptedFiles[0];
+    const result = await call('initUpload', {
+      fileSize: file.size,
+      originClient: MY_CLIENT_ID.value,
+      targetClient: props.name
+    });
+    console.log(result);
   }, []);
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
   return (
-    <ContactBody ref={dropZone} hover={hover}>
+    <ContactBody {...getRootProps()} hover={isDragActive}>
       <Avatar src={props.avatar} />
       <MetaArea>
         <DisplayName>{props.name}</DisplayName>
         <OnlineIndicator />
       </MetaArea>
       <div style={{ flexGrow: 1 }} />
+      <input {...getInputProps()} />
     </ContactBody>
   );
 }
