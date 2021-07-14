@@ -10,7 +10,7 @@ import { Bubbles } from './Particles';
 const HeaderLink: React.FC<{ text: string; link: string }> = ({ text, link }) => (
   <li>
     <Link href={link}>
-      <a className="mx-2 font-medium text-gray-300 hover:text-white">{text}</a>
+      <a className="mx-3 font-semibold text-gray-300 hover:text-white">{text}</a>
     </Link>
   </li>
 );
@@ -31,7 +31,7 @@ export const Hero: React.FC = () => (
           </Link>
         </div>
         <nav>
-          <ul className="flex navbar items-center font-medium text-xl text-white">
+          <ul className="navbar hidden md:flex items-center font-medium text-xl text-white">
             <HeaderLink text="Privacy" link="#" />
             <HeaderLink text="Pricing" link="#" />
             <HeaderLink text="Earn" link="#" />
