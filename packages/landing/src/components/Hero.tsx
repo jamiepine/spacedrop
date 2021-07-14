@@ -1,8 +1,17 @@
+import React from 'react';
 import Link from 'next/link';
-import { CopySimple, Download, Pause, Question, ShieldCheck } from 'phosphor-react';
-import { Button, Icon } from 'semantic-ui-react';
+import {
+  CopySimple,
+  Download,
+  Pause,
+  Question,
+  ShieldCheck,
+  AppleLogo,
+  WindowsLogo
+} from 'phosphor-react';
 
 import { Section } from '../layout/Section';
+import { Button } from './Button';
 import { Feature } from './Feature';
 import { Logo } from './Logo';
 import { Bubbles } from './Particles';
@@ -15,7 +24,7 @@ const HeaderLink: React.FC<{ text: string; link: string }> = ({ text, link }) =>
   </li>
 );
 
-const Hero = () => (
+export const Hero: React.FC = () => (
   <div className="overflow-hidden relative">
     <div className="absolute-expand space-gradient" style={{ minWidth: 1200 }}>
       <Bubbles />
@@ -31,7 +40,7 @@ const Hero = () => (
           </Link>
         </div>
         <nav>
-          <ul className="hidden navbar flex items-center font-medium text-xl text-white">
+          <ul className="flex navbar items-center font-medium text-xl text-white">
             <HeaderLink text="Privacy" link="#" />
             <HeaderLink text="Pricing" link="#" />
             <HeaderLink text="Earn" link="#" />
@@ -59,17 +68,17 @@ const Hero = () => (
         <div className="flex flex-col md:flex-row w-full md:w-auto">
           <Link href="#">
             <a className="m-1">
-              <Button size="large" className="w-full">
-                <Icon color="black" name="apple" size="large" style={{ marginTop: -7 }} /> Download
-                For MacOS
+              <Button className="w-full">
+                <AppleLogo fill="black" fontSize={36} style={{ marginTop: -7 }} />
+                Download for macOS
               </Button>
             </a>
           </Link>
           <Link href="#">
             <a className="m-1">
-              <Button size="large" className="w-full">
-                <Icon color="black" name="windows" size="large" style={{ marginTop: -7 }} />
-                Download For Windows
+              <Button className="w-full">
+                <WindowsLogo fill="black" fontSize={36} style={{ marginTop: -7 }} />
+                Download for Windows
               </Button>
             </a>
           </Link>
@@ -106,5 +115,3 @@ const Hero = () => (
     </Section>
   </div>
 );
-
-export { Hero };

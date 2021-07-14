@@ -1,20 +1,22 @@
 import className from 'classnames';
+import React, { HTMLProps } from 'react';
 
 type IButtonProps = {
   xl?: boolean;
-  children: string;
-};
+} & HTMLProps<HTMLDivElement>;
 
-const Button = (props: IButtonProps) => {
+const Button: React.FC<IButtonProps> = (props) => {
+  const { xl, ...rest } = props;
+
   const btnClass = className({
     'btn': true,
-    'btn-xl': props.xl,
-    'btn-base': !props.xl,
+    'btn-xl': xl,
+    'btn-base': !xl,
     'btn-primary': true
   });
 
   return (
-    <div className={btnClass}>
+    <div className={btnClass} role="button" {...rest}>
       {props.children}
       {/* @ts-ignore */}
       <style jsx>

@@ -1,12 +1,7 @@
 import { AppProps } from 'next/app';
 
-import 'semantic-ui-css/semantic.min.css';
-
 import '../styles/main.css';
 
-const MyApp = ({ Component, pageProps }: AppProps) => (
-  // eslint-disable-next-line react/jsx-props-no-spreading
-  <Component {...pageProps} />
-);
+const MyApp = ({ Component, pageProps }: AppProps) => <Component {...pageProps} />;
 
 export default MyApp;
