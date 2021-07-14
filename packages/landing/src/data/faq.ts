@@ -14,7 +14,7 @@ export default [
     \n\b We use Signal to encrypt chunks of data on the client, each chunk is encrypted as an individual message with its own unique keys—destroyed immediately after decryption.`
   },
   {
-    q: `What personal data do we store?`,
+    q: `What personal data do you store?`,
     a: `You can see exactly what data we store on our privacy page. TLDR; your email (optional), phone number (optional), IP address, the amount of bandwidth you've used and some basic usage statistics. We do not store file data or meta data, and we do not keep record of individual file transfers on our servers.`
   },
   {
@@ -24,5 +24,9 @@ export default [
   {
     q: `I want to delete my account`,
     a: `That's easy, you can do that from the app settings or at spacedrop.co/account. Your personal data will be erased within 30 days no questions asked.`
+  },
+  {
+    q: `What will the mobile app do?`,
+    a: `You'll be notified of incoming transfers, accept them to your phone or another device remotely. You'll of course also be able to initiate transfers via the native share UI and in-app.`
   }
 ];

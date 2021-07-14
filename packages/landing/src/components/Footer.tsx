@@ -11,7 +11,7 @@ const Footer = () => (
   <Background color="bg-gray-100">
     <Section>
       <CenteredFooter
-        logo={<HandGrabbing size={60} className="-mt-3 m-auto" />}
+        logo={<HandGrabbing size={60} className="-mt-3 m-auto text-primary-100" />}
         iconList={[
           { icon: YoutubeLogo, link: '' },
           { icon: TwitterLogo, link: '' },
