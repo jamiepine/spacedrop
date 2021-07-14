@@ -96,7 +96,7 @@ export const Hero: React.FC = () => (
         </div>
       </header>
       <div className="flex justify-center">
-        <img alt="appui" width={700} className="mb-5" src="/assets/images/appui.png" />
+        <img alt="appui" height={432} width={700} className="mb-5" src="/assets/images/appui.png" />
       </div>
       <div className="flex justify-center mb-2">
         <div className="flex flex-col md:flex-row ">
