@@ -1,7 +1,5 @@
 @tailwind base;
-
 @tailwind components;
-
 @tailwind utilities;
 
 body,
@@ -28,9 +26,7 @@ i {
     right: 0;
     z-index: -9;
   }
-  .space-gradient {
-    background: linear-gradient(247.94deg, #a55fff 0.93%, #6d1bd5 95.96%);
-  }
+
   .hero-bg {
     background: url('/assets/images/bg.svg');
     background-position: center bottom;
@@ -46,22 +42,8 @@ i {
   }
 }
 
-.accordion .title {
-  padding: 20px 30px !important;
-  border-bottom: 1px solid rgb(233, 233, 233);
-  font-size: 20px !important;
-  line-height: 22px;
-  font-weight: bold;
-}
-.accordion .content.active {
-  padding: 30px !important;
-  background: #f7f7f7;
-  font-size: 17px;
-}
-
-.accordion {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.096);
-  border-radius: 10px;
+.space-gradient {
+  background: linear-gradient(247.94deg, #a55fff 0.93%, #6d1bd5 95.96%);
 }
 
 .button-border {
