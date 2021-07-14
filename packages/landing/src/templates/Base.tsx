@@ -16,7 +16,7 @@ const Base = () => (
         // rate="monthly"
         benefits={[
           { title: 'Super fast transfer speed' },
-          { title: '2GB monthly bandwidth' },
+          { title: '20GB monthly bandwidth' },
           { title: '200mb filesize limit' }
         ]}
       />
