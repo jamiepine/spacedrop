@@ -50,6 +50,7 @@ i {
   padding: 20px 30px !important;
   border-bottom: 1px solid rgb(233, 233, 233);
   font-size: 20px !important;
+  line-height: 22px;
   font-weight: bold;
 }
 .accordion .content.active {

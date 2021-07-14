@@ -21,7 +21,7 @@ export const FAQ: React.FC<FAQProps> = (props) => {
         {props.data.map((item, index) => (
           <>
             <Accordion.Title active={activeIndex === index} index={index} onClick={handleClick}>
-              <Icon name="dropdown" />
+              {/* <Icon name="dropdown" /> */}
               {item.q}
             </Accordion.Title>
             <Accordion.Content active={activeIndex === index}>
