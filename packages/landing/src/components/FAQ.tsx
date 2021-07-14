@@ -7,7 +7,7 @@ interface FAQProps {
 }
 
 export const FAQ: React.FC<FAQProps> = (props) => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(-1);
 
   const handleClick = (_: any, titleProps: any) => {
     const { index } = titleProps;

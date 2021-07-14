@@ -11,33 +11,44 @@ import { Bubbles } from './Particles';
 const HeaderLink: React.FC<{ text: string; link: string }> = ({ text, link }) => (
   <li>
     <Link href={link}>
-      <a className="font-medium text-gray-300 hover:text-white">{text}</a>
+      <a className="mx-2 font-medium text-gray-300 hover:text-white">{text}</a>
     </Link>
   </li>
 );
 
 const Hero = () => (
   <div className="overflow-hidden relative">
-    <div className="absolute-expand space-gradient">
+    <div className="absolute-expand space-gradient" style={{ minWidth: 900 }}>
       <Bubbles />
     </div>
     <div className="absolute-expand hero-bg" />
-    <Section yPadding="py-6">
-      <NavbarTwoColumns logo={<Logo xl />}>
-        <HeaderLink text="Pricing" link="#" />
-        <HeaderLink text="Earn" link="#" />
-        <HeaderLink text="Team" link="#" />
-        <HeaderLink text="Privacy" link="#" />
-        <HeaderLink text="Discord" link="#" />
-      </NavbarTwoColumns>
+    <Section yPadding="py-6 px-5">
+      <div className="flex flex-wrap justify-between items-center">
+        <div>
+          <Link href="/">
+            <a>
+              <Logo xl />
+            </a>
+          </Link>
+        </div>
+        <nav>
+          <ul className="hidden navbar flex items-center font-medium text-xl text-white">
+            <HeaderLink text="Privacy" link="#" />
+            <HeaderLink text="Pricing" link="#" />
+            <HeaderLink text="Earn" link="#" />
+            <HeaderLink text="Team" link="#" />
+            <HeaderLink text="Discord" link="#" />
+          </ul>
+        </nav>
+      </div>
     </Section>
 
-    <Section yPadding="pt-20 pb-32">
+    <Section yPadding="pt-5 md:pt-10 pb-32">
       <header className="text-center">
-        <h1 className="text-6xl text-white font-black whitespace-pre-line leading-hero hero-text-shadow">
+        <h1 className="text-5xl leading-none md:text-6xl mx-5 md:mx-0 text-white font-black whitespace-pre-line hero-text-shadow">
           The fastest way to send files anywhere.
         </h1>
-        <div className="text-white font-medium text-2xl my-6">
+        <div className="text-white font-medium text-1xl md:text-2xl my-6 md:my-10">
           Just press <span className="button-border">CTRL</span> +{' '}
           <span className="button-border">Space</span> then drop!
         </div>
@@ -45,20 +56,19 @@ const Hero = () => (
       <div className="flex justify-center">
         <img alt="appui" width={700} className="mb-5" src="/assets/images/appui.png" />
       </div>
-      <div className="flex justify-center mb-10">
-        <div className="flex flex-wrap content-around">
-          <Link href="https://creativedesignsguru.com/category/nextjs/">
-            <a className="pr-4">
-              <Button size="large">
+      <div className="flex justify-center mb-2">
+        <div className="flex flex-col md:flex-row w-full md:w-auto">
+          <Link href="#">
+            <a className="m-1">
+              <Button size="large" className="w-full">
                 <Icon color="black" name="apple" size="large" style={{ marginTop: -7 }} /> Download
                 For MacOS
               </Button>
             </a>
           </Link>
-          <Link href="https://creativedesignsguru.com/category/nextjs/">
-            <a>
-              <Button size="large">
-                {' '}
+          <Link href="#">
+            <a className="m-1">
+              <Button size="large" className="w-full">
                 <Icon color="black" name="windows" size="large" style={{ marginTop: -7 }} />
                 Download For Windows
               </Button>
@@ -66,7 +76,8 @@ const Hero = () => (
           </Link>
         </div>
       </div>
-      <div className="flex flex-row  ">
+      <p className="text-center text-white opacity-50 mb-6">iOS, Android & Linux coming soon!</p>
+      <div className="flex flex-grow flex-wrap">
         <Feature
           icon={ShieldCheck}
           title="End-to-end encryption"

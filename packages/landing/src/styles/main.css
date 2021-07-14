@@ -48,16 +48,15 @@ i {
 .accordion .title {
   padding: 20px 30px !important;
   border-bottom: 1px solid rgb(233, 233, 233);
-  font-size: 17px !important;
+  font-size: 20px !important;
+  font-weight: bold;
 }
 .accordion .content.active {
   padding: 30px !important;
   background: #f7f7f7;
   font-size: 17px;
 }
-.accordion .icon {
-  content: '*';
-}
+
 .accordion {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.096);
   border-radius: 10px;
