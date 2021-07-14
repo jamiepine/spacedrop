@@ -18,7 +18,7 @@ const HeaderLink: React.FC<{ text: string; link: string }> = ({ text, link }) =>
 const DownloadButton: React.FC<{ link: string; name: string }> = (props) => (
   // eslint-disable-next-line @next/next/link-passhref
   <Link href={props.link}>
-    <button className="m-1 mr-2 flex flex-row rounded-full px-4 py-2 text-black font-bold justify-center items-center bg-white hover:bg-gray-200">
+    <button className="m-1 mr-2 flex flex-row rounded-full px-4 py-2 text-black font-bold justify-center items-center  bg-primary-900 hover:bg-white">
       {props.name === 'macOS' && (
         <svg viewBox="0 0 842 1e3" height={23} className="mr-3">
           <path

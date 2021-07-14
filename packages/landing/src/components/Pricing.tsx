@@ -60,7 +60,7 @@ export const PriceListing: React.FC<PriceListingProps> = (props) => {
         </div>
       )}
       <div>
-        <h1 className={` text-5xl text-center font-bold ${primaryTextColor}`}>
+        <h1 className={` text-5xl text-center font-black ${primaryTextColor}`}>
           {props.cost ? `$${props.cost}` : 'Free'}
         </h1>
         <p className="text-center">{props.rate}</p>
