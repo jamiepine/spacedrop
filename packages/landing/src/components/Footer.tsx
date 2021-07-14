@@ -8,7 +8,7 @@ import { Background } from './Background';
 import { CenteredFooter } from './footer/CenteredFooter';
 
 const Footer = () => (
-  <Background color="bg-gray-100">
+  <Background color="">
     <Section>
       <CenteredFooter
         logo={<HandGrabbing size={60} className="-mt-3 m-auto text-primary-100" />}

@@ -6,6 +6,7 @@ import { Section } from '../layout/Section';
 import { Feature } from './Feature';
 import { Logo } from './Logo';
 import { Bubbles } from './Particles';
+import { DiscordClyde, TwitterBird } from './svgs/platforms';
 
 const HeaderLink: React.FC<{ text: string; link: string }> = ({ text, link }) => (
   <li>
@@ -61,7 +62,24 @@ export const Hero: React.FC = () => (
             <HeaderLink text="Pricing" link="#" />
             <HeaderLink text="Earn" link="#" />
             <HeaderLink text="Team" link="#" />
-            <HeaderLink text="Discord" link="#" />
+            {/* <HeaderLink text="Discord" link="#" /> */}
+            <div className="mx-5 flex flex-row">
+              <Link href="https://discord.gg/HcJS7rmJMM">
+                <a target="_blank">
+                  <DiscordClyde className="opacity-80 h-10 mr-4 hover:opacity-100 w-8 fill-current" />
+                </a>
+              </Link>
+              <Link href="https://twitter.com/spacedropco">
+                <a target="_blank">
+                  <TwitterBird className="opacity-80 h-10 hover:opacity-100 w-8 fill-current" />
+                </a>
+              </Link>
+              <Link href="https://twitter.com/spacedropco">
+                <button className="border-2 rounded-full px-3 font-semibold ml-7">
+                  Join Waitlist
+                </button>
+              </Link>
+            </div>
           </ul>
         </nav>
       </div>
