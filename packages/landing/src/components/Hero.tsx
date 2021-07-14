@@ -5,7 +5,6 @@ import { Button, Icon } from 'semantic-ui-react';
 import { Section } from '../layout/Section';
 import { Feature } from './Feature';
 import { Logo } from './Logo';
-import { NavbarTwoColumns } from './NavbarTwoColumns';
 import { Bubbles } from './Particles';
 
 const HeaderLink: React.FC<{ text: string; link: string }> = ({ text, link }) => (
