@@ -20,6 +20,7 @@ const Footer = () => (
           <>
             <Link href={item.link}>
               <a>
+                {/* @ts-ignore */}
                 <item.icon weight={item.weight || 'fill'} />
               </a>
             </Link>
