@@ -26,6 +26,10 @@ export default [
     a: `That's easy, you can do that from the app settings or at spacedrop.co/account. Your personal data will be erased within 30 days no questions asked.`
   },
   {
+    q: `Is the app easy to uninstall?`,
+    a: `Of course, and we don't cry about it with annoying popups either—just drag the app to your trash or use any app removal tool. Theres nothing worse than an app that won't delete.`
+  },
+  {
     q: `What will the mobile app do?`,
     a: `You'll be notified of incoming transfers, accept them to your phone or another device remotely. You'll of course also be able to initiate transfers via the native share UI and in-app.`
   }

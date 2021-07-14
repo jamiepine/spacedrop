@@ -42,7 +42,7 @@ const Hero = () => (
       </div>
     </Section>
 
-    <Section yPadding="pt-5 md:pt-10 pb-10">
+    <Section yPadding="pt-5 md:pt-10 pb-40">
       <header className="text-center">
         <h1 className="text-4xl leading-none md:text-6xl mx-5 md:mx-0 text-white font-black whitespace-pre-line hero-text-shadow">
           The fastest way to send files anywhere.
@@ -61,7 +61,7 @@ const Hero = () => (
             <a className="m-1">
               <Button size="large" className="w-full">
                 <Icon color="black" name="apple" size="large" style={{ marginTop: -7 }} /> Download
-                For MacOS
+                for macOS
               </Button>
             </a>
           </Link>
@@ -69,7 +69,7 @@ const Hero = () => (
             <a className="m-1">
               <Button size="large" className="w-full">
                 <Icon color="black" name="windows" size="large" style={{ marginTop: -7 }} />
-                Download For Windows
+                Download for Windows
               </Button>
             </a>
           </Link>
