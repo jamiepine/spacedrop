@@ -7,7 +7,7 @@ interface Benefit {
 }
 
 export const PricingContainer: React.FC = (props) => (
-  <div className="pt-10 -mt-32 justify-center flex flex-row flex-wrap ">{props.children}</div>
+  <div className="pt-10 -mt-40 justify-center flex flex-row flex-wrap ">{props.children}</div>
 );
 
 export const PriceButton: React.FC<{ primaryBGColor?: string }> = (props) => {
@@ -53,7 +53,7 @@ export const PriceListing: React.FC<PriceListingProps> = (props) => {
   const primaryTextColor = props.recommended ? 'text-primary-100' : 'text-black';
   const primaryBGColor = props.recommended ? 'bg-primary-100' : 'bg-black';
   return (
-    <div className="flex relative self-start rounded-3xl bg-white w-80 p-7 justify-center shadow-lg mb-10 md:mr-4">
+    <div className="flex relative self-start rounded-3xl bg-white w-full m-6 md:w-80  p-7 justify-center shadow-2xl">
       {props.recommended && (
         <div className="absolute shadow-md object-center rounded-3xl -my-10 px-3 py-1 bg-primary-100 text-white font-bold">
           MOST POPULAR
