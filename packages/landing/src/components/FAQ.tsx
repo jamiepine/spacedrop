@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Accordion, Icon } from 'semantic-ui-react';
+import { Accordion } from 'semantic-ui-react';
 
 interface FAQProps {
   data: { q: string; a: string }[];
