@@ -4,6 +4,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import themeDark from './theme/themeDark';
 import Fonts from './theme/fonts';
 import DropView from './screens/DropView';
+import { useEffect } from 'react';
 
 const Container = styled.div`
   /* background-color: ${(props) => props.theme.background + '40'}; */

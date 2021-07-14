@@ -5,7 +5,7 @@
     "api": "yarn workspace api",
     "desktop": "yarn workspace desktop",
     "landing": "yarn workspace landing",
-    "dev": "yarn api prisma:client && concurrently \"docker-compose -f docker-compose.dev.yml up\" \"yarn api dev\" \"yarn desktop dev\"",
+    "dev": "yarn api prisma:client && concurrently \"docker-compose -f docker-compose.dev.yml up\" \"yarn api dev\" \"yarn desktop dev:app\" \"yarn desktop dev:electron\"",
     "dev:backend": "docker-compose -f docker-compose.dev.yml up"
   },
   "workspaces": {

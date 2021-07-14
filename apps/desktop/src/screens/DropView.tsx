@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { useTheme } from 'styled-components';
 import { GearSix, MagnifyingGlass, Lock } from 'phosphor-react';
 import ContactCard from '../components/Contact';
+import { call } from '../websocket';
 
 const Main = () => {
   return (
@@ -28,7 +29,10 @@ const Main = () => {
         <ContactCard name="jeff01" avatar="https://i.pravatar.cc/302" />
         <ContactCard name="weffeef" avatar="https://i.pravatar.cc/303" />
       </Content>
-      <FooterArea>
+      <FooterArea onClick={() => {
+        console.log('calling');
+        call('createAccount', { email: "contact@itsrems.com" });
+      }}>
         <SpacedropLogo>Spacedrop</SpacedropLogo>
         {/* <div style={{ width: 40, height: 40 }}>
           <img src="images/logo.png" alt="space-logo" style={{ width: 40, height: 40 }} />
