@@ -15,9 +15,10 @@ const Base = () => (
         name="free"
         // rate="monthly"
         benefits={[
-          { title: 'Super fast transfer speed' },
-          { title: '20GB monthly bandwidth' },
-          { title: '200mb filesize limit' }
+          { title: 'Fastest transfer speed' },
+          { title: '20GB bandwidth' },
+          { title: '200mb filesize limit' },
+          { title: '1GB outbox' }
         ]}
       />
       <PriceListing
@@ -26,11 +27,10 @@ const Base = () => (
         cost={3}
         rate="monthly"
         benefits={[
-          { title: 'Super fast transfer speed' },
-          { title: '100GB monthly bandwidth' },
+          { title: 'Fastest transfer speed' },
+          { title: '100GB bandwidth' },
           { title: 'Unlimited filesize' },
-          { title: 'Send to offline contacts' },
-          { title: 'Vanity URL spacedrop.to/yourname' }
+          { title: '50GB outbox' }
         ]}
       />
       <PriceListing
@@ -38,12 +38,10 @@ const Base = () => (
         cost={6}
         rate="monthly"
         benefits={[
-          { title: 'Super fast transfer speed' },
-          { title: '300GB monthly bandwidth' },
+          { title: 'Fastest transfer speed' },
+          { title: '300GB bandwidth' },
           { title: 'Unlimited filesize' },
-          { title: 'Send to offline contacts' },
-          { title: 'Vanity URL spacedrop.to/yourname' },
-          { title: 'Ownership of a literal planet with intelligent life' }
+          { title: '100GB outbox' }
         ]}
       />
     </PricingContainer>

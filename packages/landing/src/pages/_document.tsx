@@ -14,7 +14,7 @@ class MyDocument extends Document {
             href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.7/components/icon.min.css"
           />
         </Head>
-        <body>
+        <body className="bg-white">
           <Main />
           <NextScript />
         </body>

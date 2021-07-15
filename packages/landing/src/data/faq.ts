@@ -4,6 +4,10 @@ const faq = [
     a: `Absolutely, you can set your preferred keybind from CTRL + Space to whatever you want in the settings.`
   },
   {
+    q: `Can I send files to people `,
+    a: `Absolutely, you can set your preferred keybind from CTRL + Space to whatever you want in the settings.`
+  },
+  {
     q: `How is this different to AirDrop?`,
     a: `Airdrop works only on Apple devices physically nearby—Spacedrop works on all platforms and sends data securely anywhere in the world. It's also much faster to hit CTRL+Space and drop than it is to: *right click* > Share > AirDrop > *select recipient*. The convenience of Spacedrop is unmatched.`
   },

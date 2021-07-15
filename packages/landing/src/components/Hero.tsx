@@ -1,12 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
-import { CopySimple, Download, Pause, Question, ShieldCheck } from 'phosphor-react';
+import { Cloud, CopySimple, Heart, List, Play, ShieldCheck } from 'phosphor-react';
 
 import { Section } from '../layout/Section';
 import { Feature } from './Feature';
 import { Logo } from './Logo';
 import { Bubbles } from './Particles';
 import { DiscordClyde, TwitterBird } from './svgs/platforms';
+import { Popover } from '@headlessui/react';
 
 const HeaderLink: React.FC<{ text: string; link: string }> = ({ text, link }) => (
   <li>
@@ -57,6 +58,24 @@ export const Hero: React.FC = () => (
           </Link>
         </div>
         <nav>
+          <Popover className="relative">
+            <Popover.Button>
+              <div className="navbar flex md:hidden items-center font-medium text-3xl mr-5 text-white">
+                <List weight="bold" />
+              </div>
+            </Popover.Button>
+
+            <Popover.Panel className="absolute z-10">
+              <ul className="grid grid-cols-1 bg-black rounded text-white p-3">
+                <HeaderLink text="Privacy" link="#" />
+                <HeaderLink text="Pricing" link="#" />
+                <HeaderLink text="Earn" link="#" />
+                <HeaderLink text="Team" link="#" />
+              </ul>
+
+              <img src="/solutions.jpg" alt="" />
+            </Popover.Panel>
+          </Popover>
           <ul className="navbar hidden md:flex items-center font-medium text-xl text-white">
             <HeaderLink text="Privacy" link="#" />
             <HeaderLink text="Pricing" link="#" />
@@ -88,7 +107,7 @@ export const Hero: React.FC = () => (
     <Section yPadding="pt-5 md:pt-10 pb-40">
       <header className="text-center">
         <h1 className="text-5xl leading-none md:text-6xl mx-5 md:mx-0 text-white font-black whitespace-pre-line hero-text-shadow">
-          File sharing on a keybind
+          Share files with a keybind
         </h1>
         <div className="text-white font-medium text-1xl md:text-2xl my-6 md:my-10">
           Just press <span className="button-border">CTRL</span> +{' '}
@@ -107,12 +126,17 @@ export const Hero: React.FC = () => (
       <p className="text-center text-white opacity-50 mb-6">iOS, Android & Linux coming soon!</p>
       <div className="flex flex-grow flex-wrap">
         <Feature
+          icon={Heart}
+          title="Only there when you need"
+          description="Spacedrop integrates with your OS, appearing only on your keybind. Incoming transfers can be accepted/rejected via notifications."
+        />
+        <Feature
           icon={ShieldCheck}
           title="End-to-end encrypted"
           description="File transfers are secured with the Signal Protocol, the most secure end-to-end encrypted messaging system in existence."
         />
         <Feature
-          icon={Pause}
+          icon={Play}
           title="Auto resume"
           description="Sending large files? Transfers will pause and resume again if your connection drops."
         />
@@ -122,15 +146,15 @@ export const Hero: React.FC = () => (
           description="Clone the contents of your clipboard with a contact in one click, great for sharing quick information with a friend or co-worker."
         />
         <Feature
-          icon={Download}
-          title="Download later"
-          description="We don’t store your files on our servers. Unless you want to send a file to an offline contact, in which case we’ll keep it (encrypted) until they’re back online to receive it."
+          icon={Cloud}
+          title="Outbox"
+          description="Sending to someone offline? Your outbox is temporary cloud storage for pending file transfers."
         />
-        <Feature
+        {/* <Feature
           icon={Question}
           title="Temporary drop zone"
           description="Can’t see who you want to send to yet? Need to group files together to send at once? Drop in the grey space between to queue a transfer."
-        />
+        /> */}
       </div>
     </Section>
   </div>
