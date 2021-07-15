@@ -53,13 +53,13 @@ export const PriceListing: React.FC<PriceListingProps> = (props) => {
   const primaryTextColor = props.recommended ? 'text-primary-100' : 'text-black';
   const primaryBGColor = props.recommended ? 'bg-primary-100' : 'bg-black';
   return (
-    <div className="flex relative self-start rounded-3xl bg-white w-full my-6 mx-2 md:w-80  p-7 justify-center shadow-2xl">
+    <div className="flex relative self-start rounded-3xl bg-white w-full my-6 mx-6 md:mx-2 md:w-80  p-7 justify-center shadow-2xl">
       {props.recommended && (
         <div className="absolute shadow-md object-center rounded-3xl -my-10 px-3 py-1 bg-primary-100 text-white font-bold">
           MOST POPULAR
         </div>
       )}
-      <div>
+      <div className="flex-grow">
         <h1 className={` text-5xl text-center font-black ${primaryTextColor}`}>
           {props.cost ? `$${props.cost}` : 'Free'}
         </h1>

@@ -72,8 +72,6 @@ export const Hero: React.FC = () => (
                 <HeaderLink text="Earn" link="#" />
                 <HeaderLink text="Team" link="#" />
               </ul>
-
-              <img src="/solutions.jpg" alt="" />
             </Popover.Panel>
           </Popover>
           <ul className="navbar hidden md:flex items-center font-medium text-xl text-white">
@@ -128,12 +126,12 @@ export const Hero: React.FC = () => (
         <Feature
           icon={Heart}
           title="Only there when you need"
-          description="Spacedrop integrates with your OS, appearing only on your keybind. Incoming transfers can be accepted/rejected via notifications."
+          description="Spacedrop integrates with your OS, just press the keybind to reveal the drop UI."
         />
         <Feature
           icon={ShieldCheck}
           title="End-to-end encrypted"
-          description="File transfers are secured with the Signal Protocol, the most secure end-to-end encrypted messaging system in existence."
+          description="File transfers are secured with the Signal Protocol, the most secure end-to-end encrypted messaging system around today."
         />
         <Feature
           icon={Play}
