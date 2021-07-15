@@ -74,7 +74,7 @@ export const PriceListing: React.FC<PriceListingProps> = (props) => {
           ))}
         </div>
         <PriceButton primaryBGColor={primaryBGColor}>
-          {props.cost ? 'Choose Plan' : 'Create Account'}
+          {props.cost ? 'Choose Plan' : 'Download'}
         </PriceButton>
       </div>
     </div>

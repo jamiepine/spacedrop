@@ -4,8 +4,12 @@ const faq = [
     a: `Absolutely, you can set your preferred keybind from CTRL + Space to whatever you want in the settings.`
   },
   {
-    q: `Can I send files to people `,
-    a: `Absolutely, you can set your preferred keybind from CTRL + Space to whatever you want in the settings.`
+    q: `Do I need to make an account?`,
+    a: `Nope, just download the app and you'll be able to use it as a free user.`
+  },
+  {
+    q: `Can I send files to people without the app?`,
+    a: `At this time, no. However! We will be building out a web only version that will allow guests to receive files from you. You can send an email or text message with a link that will start the transfer to them.`
   },
   {
     q: `How is this different to AirDrop?`,
