@@ -12,6 +12,10 @@ const faq = [
     a: `At this time, no. However! We will be building out a web only version that will allow guests to receive files from you. You can send an email or text message with a link that will start the transfer to them.`
   },
   {
+    q: `Do you store files?`,
+    a: `Nope! We're staying out of the data storage business and focusing making data transfer a breeze. To enable offline clients to accept file transfers we integrate with existing cloud storage providers such as Dropbox and Google Drive.`
+  },
+  {
     q: `How is this different to AirDrop?`,
     a: `Airdrop works only on Apple devices physically nearby—Spacedrop works on all platforms and sends data securely anywhere in the world. It's also much faster to hit CTRL+Space and drop than it is to: *right click* > Share > AirDrop > *select recipient*. The convenience of Spacedrop is unmatched.`
   },

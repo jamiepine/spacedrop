@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Cloud, CopySimple, Heart, List, Play, ShieldCheck } from 'phosphor-react';
+import { Cloud, CopySimple, Heart, InstagramLogo, List, Play, ShieldCheck } from 'phosphor-react';
 
 import { Section } from '../layout/Section';
 import { Feature } from './Feature';
@@ -48,7 +48,7 @@ export const Hero: React.FC = () => (
       <Bubbles />
     </div>
     <div className="absolute-expand hero-bg" />
-    <Section yPadding="py-6 px-5">
+    <Section yPadding="p-5">
       <div className="flex flex-wrap justify-between items-center">
         <div>
           <Link href="/">
@@ -58,7 +58,7 @@ export const Hero: React.FC = () => (
           </Link>
         </div>
         <nav>
-          <Popover className="relative">
+          <Popover className="relative m-0 h-0">
             <Popover.Button>
               <div className="navbar flex md:hidden items-center font-medium text-3xl mr-5 text-white">
                 <List weight="bold" />
@@ -79,16 +79,23 @@ export const Hero: React.FC = () => (
             <HeaderLink text="Pricing" link="#" />
             <HeaderLink text="Earn" link="#" />
             <HeaderLink text="Team" link="#" />
-            {/* <HeaderLink text="Discord" link="#" /> */}
-            <div className="mx-5 flex flex-row">
+            <div className=" mx-5 flex flex-row">
+              <Link href="https://instagram.com/spacedropco">
+                <a target="_blank">
+                  <InstagramLogo
+                    weight="fill"
+                    className="opacity-80 h-9 w-7 mr-4 hover:opacity-100 fill-current"
+                  />
+                </a>
+              </Link>
               <Link href="https://discord.gg/HcJS7rmJMM">
                 <a target="_blank">
-                  <DiscordClyde className="opacity-80 h-10 mr-4 hover:opacity-100 w-8 fill-current" />
+                  <DiscordClyde className="opacity-80 h-9 w-7 mr-4 hover:opacity-100  fill-current" />
                 </a>
               </Link>
               <Link href="https://twitter.com/spacedropco">
                 <a target="_blank">
-                  <TwitterBird className="opacity-80 h-10 hover:opacity-100 w-8 fill-current" />
+                  <TwitterBird className="opacity-80 h-9 w-7 hover:opacity-100  fill-current" />
                 </a>
               </Link>
               <Link href="https://twitter.com/spacedropco">
@@ -116,7 +123,14 @@ export const Hero: React.FC = () => (
         <img alt="appui" height={432} width={700} className="mb-5" src="/assets/images/appui.png" />
       </div>
       <div className="flex justify-center mb-2">
-        <div className="flex flex-col md:flex-row ">
+        <div
+          onClick={() =>
+            alert(
+              'You are very early, download will be ready in a few days. Join the Discord to be notified!'
+            )
+          }
+          className="flex flex-col md:flex-row "
+        >
           <DownloadButton link="#" name="macOS" />
           <DownloadButton link="#" name="Windows" />
         </div>
@@ -145,8 +159,8 @@ export const Hero: React.FC = () => (
         />
         <Feature
           icon={Cloud}
-          title="Outbox"
-          description="Sending to someone offline? Your outbox is temporary cloud storage for pending file transfers."
+          title="Cloud support"
+          description="Connect Dropbox or Google Drive* so you can receive files offline. *we're adding more!"
         />
         {/* <Feature
           icon={Question}

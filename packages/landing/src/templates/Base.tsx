@@ -13,12 +13,12 @@ const Base = () => (
     <PricingContainer>
       <PriceListing
         name="free"
-        // rate="monthly"
+        rate="monthly"
         benefits={[
           { title: 'Fastest transfer speed' },
-          { title: '20GB bandwidth' },
-          { title: '200mb filesize limit' },
-          { title: '1GB outbox' }
+          { title: 'Unlimited local transfers' },
+          { title: '20GB internet transfer' },
+          { title: '300mb filesize limit' }
         ]}
       />
       <PriceListing
@@ -28,20 +28,20 @@ const Base = () => (
         rate="monthly"
         benefits={[
           { title: 'Fastest transfer speed' },
-          { title: '100GB bandwidth' },
-          { title: 'Unlimited filesize' },
-          { title: '50GB outbox' }
+          { title: 'Unlimited local transfers' },
+          { title: '100GB internet transfer' },
+          { title: 'Unlimited filesize' }
         ]}
       />
       <PriceListing
         name="pro"
-        cost={6}
+        cost={9}
         rate="monthly"
         benefits={[
           { title: 'Fastest transfer speed' },
-          { title: '300GB bandwidth' },
-          { title: 'Unlimited filesize' },
-          { title: '100GB outbox' }
+          { title: 'Unlimited local transfers' },
+          { title: '1TB internet transfer' },
+          { title: 'Unlimited filesize' }
         ]}
       />
     </PricingContainer>

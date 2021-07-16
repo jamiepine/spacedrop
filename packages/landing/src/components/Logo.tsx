@@ -11,7 +11,7 @@ const Logo = (props: ILogoProps) => {
   return (
     <div>
       <span className={`text-white inline-flex items-center ${fontStyle}`}>
-        <HandGrabbing size={40} className="-mt-3 mr-2" />
+        <HandGrabbing size={40} className="-mt-3 mr-2 ml-2" />
         Spacedrop
       </span>
     </div>
