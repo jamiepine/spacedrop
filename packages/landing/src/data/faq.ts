@@ -47,7 +47,7 @@ const faq = [
   },
   {
     q: `What will the mobile app do?`,
-    a: `You'll be notified of incoming transfers; you could accept them right on your phone or even another device remotely. You'll of course also be able to initiate transfers via the native share UI and in-app. We'll begin working on it once desktop is fully stable!`
+    a: `You could be notified on the go of incoming transfers; accept them right on your phone or even remotely to another device. You'll of course also be able to initiate transfers via the native iOS/Android share UI and in the Spacedrop app. We'll begin working on it once desktop is fully stable!`
   }
 ];
 
