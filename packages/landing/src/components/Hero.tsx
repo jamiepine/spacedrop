@@ -57,16 +57,16 @@ export const Hero: React.FC = () => (
             </a>
           </Link>
         </div>
-        <nav>
-          <Popover className="relative m-0 h-0">
+        <nav className="flex self-end">
+          <Popover>
             <Popover.Button>
               <div className="navbar flex md:hidden items-center font-medium text-3xl mr-5 text-white">
                 <List weight="bold" />
               </div>
             </Popover.Button>
 
-            <Popover.Panel className="absolute z-10">
-              <ul className="grid grid-cols-1 bg-black rounded text-white p-3">
+            <Popover.Panel className="absolute md:hidden z-10 -ml-10 ">
+              <ul className="grid grid-cols-1 space-y-3 bg-black rounded-xl text-white py-4 px-2">
                 <HeaderLink text="Privacy" link="#" />
                 <HeaderLink text="Pricing" link="#" />
                 <HeaderLink text="Earn" link="#" />

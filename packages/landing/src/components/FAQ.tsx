@@ -13,7 +13,7 @@ export const FAQ: React.FC<FAQProps> = (props) => {
   const [active, setActive] = React.useState<number>(-1);
 
   return (
-    <div className="max-w-screen-xl mx-auto flex flex-col px-20 pt-10 pb-10">
+    <div className="max-w-screen-xl mx-auto flex flex-col px-7 pt-10 pb-10">
       <h1 className="text-4xl font-bold mb-4">FAQ</h1>
 
       <ul className="list-none border border-gray-300 rounded-lg">
@@ -27,7 +27,7 @@ export const FAQ: React.FC<FAQProps> = (props) => {
           >
             <Disclosure.Button
               onClickCapture={() => setActive(index === active ? -1 : index)}
-              className="flex px-5 py-4 text-black font-bold text-xl"
+              className="flex text-left px-5 py-4 text-black font-bold text-xl"
             >
               {item.q}
             </Disclosure.Button>
