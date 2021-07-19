@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "nodemon",
-    "prisma:client": "npx prisma generate"
+    "prisma:client": "npx prisma generate",
+    "migrate": "npx prisma migrate"
   },
   "dependencies": {
     "@prisma/client": "^2.26.0",

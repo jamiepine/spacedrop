@@ -8,13 +8,23 @@ export async function wsMessageHandler (ws: uWS.WebSocket, message: ArrayBuffer,
     // @ts-ignore
     const runnable = actions[action];
     if (runnable) {
-      const result = await runnable(payload);
-      if (result) ws.send(JSON.stringify({
-        action: `${action}-return`,
-        data: result
-      }), isBinary);
+      try {
+        const result = await runnable(payload);
+        if (result) ws.send(JSON.stringify({
+          action: `${action}-return`,
+          data: result
+        }), isBinary);        
+      } catch (error) {
+        console.log(error);
+        ws.send(JSON.stringify({
+          action: `${action}-return`,
+          data: {
+            status: 'error'
+          }
+        }), isBinary);
+      }
     }
   } catch (error) {
-    
+    console.log('ws error', error);
   }
 }

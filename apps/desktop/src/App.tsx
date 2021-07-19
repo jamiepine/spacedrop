@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import { usePulse } from '@pulsejs/react';
 import { MY_CLIENT_ID } from './state';
 import { sendPing } from './ping';
+import { call } from './websocket';
 
 const Container = styled.div`
   /* background-color: ${(props) => props.theme.background + '40'}; */
@@ -20,6 +21,13 @@ const Container = styled.div`
 `;
 
 const App = () => {
+  const [clientId] = usePulse([MY_CLIENT_ID]);
+  useEffect(() => {
+    if (!clientId || clientId?.length < 1) (async () => {
+      const { status, data } = await call('createClient', {});
+      if (status === 'success') MY_CLIENT_ID.set(data.client.id);
+    })();
+  }, []);
   useEffect(() => {
     const interval = setInterval(sendPing, 5 * 60 * 100);
     return () => {

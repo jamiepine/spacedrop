@@ -9,7 +9,6 @@ datasource db {
 
 model Account {
   username String @id
-  passwordHash String @map("password_hash")
   
   @@map("account")
 }
