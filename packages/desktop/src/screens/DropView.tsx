@@ -14,19 +14,24 @@ const Main = () => {
         />
         <SearchBar placeholder="Search Contacts" autoFocus />
       </SearchBarArea> */}
+      <Content shift>
+        <ContactCard name="jamie" avatar="https://i.pravatar.cc/299" />
+        <ContactCard name="xQc" avatar="https://i.pravatar.cc/301" />
+        <ContactCard name="jeff01" avatar="https://i.pravatar.cc/302" />
+        <ContactCard name="jeff01" avatar="https://i.pravatar.cc/302" />
+      </Content>
       <Content>
         <ContactCard name="jamie" avatar="https://i.pravatar.cc/299" />
         <ContactCard name="xQc" avatar="https://i.pravatar.cc/301" />
         <ContactCard name="jeff01" avatar="https://i.pravatar.cc/302" />
-        <ContactCard name="weffeef" avatar="https://i.pravatar.cc/303" />
+        <ContactCard name="jeff01" avatar="https://i.pravatar.cc/302" />
+        <ContactCard name="jeff01" avatar="https://i.pravatar.cc/302" />
+      </Content>
+      <Content shift>
+        <ContactCard name="jamie" avatar="https://i.pravatar.cc/299" />
         <ContactCard name="jamie" avatar="https://i.pravatar.cc/299" />
         <ContactCard name="xQc" avatar="https://i.pravatar.cc/301" />
         <ContactCard name="jeff01" avatar="https://i.pravatar.cc/302" />
-        <ContactCard name="weffeef" avatar="https://i.pravatar.cc/303" />
-        <ContactCard name="jamie" avatar="https://i.pravatar.cc/299" />
-        <ContactCard name="xQc" avatar="https://i.pravatar.cc/301" />
-        <ContactCard name="jeff01" avatar="https://i.pravatar.cc/302" />
-        <ContactCard name="weffeef" avatar="https://i.pravatar.cc/303" />
       </Content>
       <FooterArea>
         <SpacedropLogo>Spacedrop</SpacedropLogo>
@@ -67,10 +72,11 @@ const FileViewContainer = styled.div`
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  /* padding: 10px 15px; */
+  padding-top: 10px;
   background-color: ${(props) => props.theme.background + '40'};
 `;
-const Content = styled.div`
+
+const Content = styled.div<{ shift?: boolean }>`
   font-size: 20px;
   flex: 1;
   padding: 15px 15px;
@@ -78,7 +84,12 @@ const Content = styled.div`
   justify-content: start;
   /* flex-wrap: wrap; */
   grid-gap: 5px;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 250px));
+  grid-template-columns: repeat(auto-fit, minmax(50px, 120px));
+  ${(props) =>
+    props.shift &&
+    `
+    margin-left: 67px;
+  `}
   /* justify-content: center;
   align-items: center; */
   overflow-y: auto;
