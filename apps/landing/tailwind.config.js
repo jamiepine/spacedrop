@@ -18,15 +18,15 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          100: '#E6F6FE',
-          200: '#C0EAFC',
+          100: '#9953F1',
+          200: '#AE6DFF',
           300: '#9ADDFB',
           400: '#4FC3F7',
           500: '#03A9F4',
           600: '#0398DC',
           700: '#026592',
           800: '#014C6E',
-          900: '#013349'
+          900: '#EADCFB'
         },
         gray: {
           100: '#f7fafc',
@@ -43,6 +43,23 @@ module.exports = {
 
       lineHeight: {
         hero: '4.5rem'
+      },
+      fontFamily: {
+        sans: [
+          'proxima-nova',
+          'ui-sans-serif',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          'Oxygen',
+          'Ubuntu',
+          'Cantarell',
+          'Open Sans',
+          'Helvetica Neue',
+          'sans-serif'
+        ]
       }
     }
   },

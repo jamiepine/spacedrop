@@ -1,25 +1,43 @@
 @tailwind base;
-
 @tailwind components;
-
 @tailwind utilities;
 
 body {
-  font-family: Proxima Nova, Arial, Helvetica, sans-serif;
+  overflow-x: hidden !important;
 }
 
-.hero-bg {
-  background-image: url('/assets/images/bg.svg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-origin: content-box;
-}
 @responsive {
-  .space-gradient {
-    background-image: linear-gradient(to left bottom, #a55fff, #9750f4, #8a40e9, #7b2fdf, #6d1bd4);
+  .absolute-expand {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -9;
+  }
+
+  .hero-bg {
+    background: url('/assets/images/bg.svg');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-size: cover;
+    mix-blend-mode: luminosity;
+    opacity: 0.3;
   }
 
   .hero-text-shadow {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
+}
+
+.space-gradient {
+  background: linear-gradient(247.94deg, #a55fff 0.93%, #6d1bd5 95.96%);
+}
+
+.button-border {
+  border-radius: 8px;
+  border: 2px solid white;
+  padding: 2px 8px;
+  margin: 2px;
 }

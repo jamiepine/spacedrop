@@ -19,29 +19,34 @@ const Main = () => {
         <SearchBar placeholder="Search Contacts" autoFocus />
       </SearchBarArea> */}
       <Content>
-        {
-          contacts.map((id) => (
-            <ContactCard key={id} name={id} avatar="https://i.pravatar.cc/299" />
-          ))
-        }
+        {contacts.map((id) => (
+          <ContactCard key={id} name={id} avatar="https://i.pravatar.cc/299" />
+        ))}
         <ContactCard name="jamie" avatar="https://i.pravatar.cc/299" />
         <ContactCard name="xQc" avatar="https://i.pravatar.cc/301" />
         <ContactCard name="jeff01" avatar="https://i.pravatar.cc/302" />
-        <ContactCard name="weffeef" avatar="https://i.pravatar.cc/303" />
-        <ContactCard name="jamie" avatar="https://i.pravatar.cc/299" />
-        <ContactCard name="xQc" avatar="https://i.pravatar.cc/301" />
         <ContactCard name="jeff01" avatar="https://i.pravatar.cc/302" />
-        <ContactCard name="weffeef" avatar="https://i.pravatar.cc/303" />
-        <ContactCard name="jamie" avatar="https://i.pravatar.cc/299" />
-        <ContactCard name="xQc" avatar="https://i.pravatar.cc/301" />
-        <ContactCard name="jeff01" avatar="https://i.pravatar.cc/302" />
-        <ContactCard name="weffeef" avatar="https://i.pravatar.cc/303" />
       </Content>
-      <FooterArea onClick={async () => {
-        console.log('calling');
-        const result = await call('createAccount', { email: "contact@itsrems.com" });
-        console.log(result);
-      }}>
+      <Content>
+        <ContactCard name="jamie" avatar="https://i.pravatar.cc/299" />
+        <ContactCard name="xQc" avatar="https://i.pravatar.cc/301" />
+        <ContactCard name="jeff01" avatar="https://i.pravatar.cc/302" />
+        <ContactCard name="jeff01" avatar="https://i.pravatar.cc/302" />
+        <ContactCard name="jeff01" avatar="https://i.pravatar.cc/302" />
+      </Content>
+      <Content shift>
+        <ContactCard name="jamie" avatar="https://i.pravatar.cc/299" />
+        <ContactCard name="jamie" avatar="https://i.pravatar.cc/299" />
+        <ContactCard name="xQc" avatar="https://i.pravatar.cc/301" />
+        <ContactCard name="jeff01" avatar="https://i.pravatar.cc/302" />
+      </Content>
+      <FooterArea
+        onClick={async () => {
+          console.log('calling');
+          const result = await call('createAccount', { email: 'contact@itsrems.com' });
+          console.log(result);
+        }}
+      >
         <SpacedropLogo>Spacedrop</SpacedropLogo>
         {/* <div style={{ width: 40, height: 40 }}>
           <img src="images/logo.png" alt="space-logo" style={{ width: 40, height: 40 }} />
@@ -80,17 +85,26 @@ const FileViewContainer = styled.div`
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  /* padding: 10px 15px; */
+  padding-top: 10px;
   background-color: ${(props) => props.theme.background + '40'};
 `;
-const Content = styled.div`
+
+const Content = styled.div<{ shift?: boolean }>`
   font-size: 20px;
   flex: 1;
   padding: 15px 15px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  justify-content: start;
+  /* flex-wrap: wrap; */
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 120px));
+  ${(props) =>
+    props.shift &&
+    `
+    margin-left: 67px;
+  `}
+  /* justify-content: center;
+  align-items: center; */
   overflow-y: auto;
   overflow-x: hidden;
 `;

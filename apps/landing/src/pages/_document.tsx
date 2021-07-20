@@ -8,8 +8,13 @@ class MyDocument extends Document {
       <Html lang={AppConfig.locale}>
         <Head>
           <link rel="stylesheet" href="https://use.typekit.net/kko5zpl.css" />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.7/components/icon.min.css"
+          />
         </Head>
-        <body>
+        <body className="bg-white">
           <Main />
           <NextScript />
         </body>
