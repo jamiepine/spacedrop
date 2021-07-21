@@ -23,8 +23,8 @@ enum Plan {
 }
 
 model Client {
-  id         String @id
-  ip_address String
+  id         String  @id
+  ip_address String?
 
   @@map("clients")
 }

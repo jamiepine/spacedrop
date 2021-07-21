@@ -5,7 +5,9 @@ export interface ActionReturn {
   data?: any;
 }
 
-export class SpaceLink {
+let instance: Socket;
+
+class Socket {
   public ready: boolean;
   // @ts-ignore
   public client: WebSocket;
@@ -13,38 +15,39 @@ export class SpaceLink {
     [key: string]: Function[];
   } = {};
 
-  constructor () {
+  constructor() {
     this.ready = false;
     this.connect();
   }
 
-  private connect () {
+  private connect() {
     this.client = new WebSocket(uri);
     this.client.onopen = () => {
       console.log(`[Link] ws open, ready for events !`);
       this.ready = true;
-    }
+    };
     this.client.onclose = () => {
       this.ready = false;
-    }
+    };
     this.client.onerror = () => {
       this.ready = false;
-    }
+    };
     this.Listen();
-    this.globalBind();
   }
 
-  public async Call (action: string, payload: any): Promise<ActionReturn> {
-    if (!await this.waitForReady()) return { status: 'timeout', data: '' };
+  public async Call(action: string, payload: any): Promise<ActionReturn> {
+    if (!(await this.waitForReady())) return { status: 'timeout', data: '' };
     return await Promise.race([
       new Promise<any>((resolve) => {
         setTimeout(resolve, 30 * 1000);
       }),
       new Promise<ActionReturn>(async (resolve) => {
-        this.client.send(JSON.stringify({
-          action,
-          payload
-        }))
+        this.client.send(
+          JSON.stringify({
+            action,
+            payload
+          })
+        );
         const onReturn = (data: any) => {
           this.off(action, onReturn);
           if (!data) data = { status: 'error', data: 'unknown_error' } as ActionReturn;
@@ -55,7 +58,7 @@ export class SpaceLink {
     ]);
   }
 
-  public Listen () {
+  public Listen() {
     this.client.onmessage = (msg) => {
       try {
         const { action, data } = JSON.parse(msg.data);
@@ -65,22 +68,21 @@ export class SpaceLink {
             func(data);
           }
         }
-      } catch (error) {
-        
-      }
-    }
+      } catch (error) {}
+    };
   }
 
-  public on (event: string, callback: Function) {
+  public on(event: string, callback: Function) {
     if (!this.listeners[event]) this.listeners[event] = [];
     if (!this.listeners[event].includes(callback)) this.listeners[event].push(callback);
     this.Listen();
   }
 
-  public off (event: string, callback?: Function) {
+  public off(event: string, callback?: Function) {
     if (this.listeners[event]) {
       if (callback) {
-        if (this.listeners[event].includes(callback)) this.listeners[event].splice(this.listeners[event].indexOf(callback), 1);
+        if (this.listeners[event].includes(callback))
+          this.listeners[event].splice(this.listeners[event].indexOf(callback), 1);
       } else {
         // @ts-ignore
         this.listeners[event] = undefined;
@@ -88,7 +90,7 @@ export class SpaceLink {
     }
   }
 
-  private async waitForReady () {
+  private async waitForReady() {
     return await new Promise((resolve) => {
       if (!this.ready) this.connect();
       if (this.ready) return resolve(true);
@@ -103,31 +105,20 @@ export class SpaceLink {
         if (this.ready) {
           return resolve(true);
         }
-      }
+      };
       int = setInterval(checkInit, 1500);
     });
   }
-
-  private globalBind () {
-    try {
-      // @ts-ignore
-      globalThis.__space_link__ = SpaceLink;
-      // @ts-ignore
-      globalThis.__space_link__app = this;
-    } catch (error) {
-      // fail silently
-    }
-  }
 }
 
-export function spaceLink (): SpaceLink {
+export function socket(): Socket {
   // @ts-ignore
-  if (globalThis.__space_link__app) return globalThis.__space_link__app
-  const link = new SpaceLink();
-  return link;
+  if (instance) return instance;
+  else instance = new Socket();
+  return instance;
 }
 
-export async function call (action: string, payload: any) {
+export async function call(action: string, payload: any) {
   console.log('[call]', action);
-  return await spaceLink().Call(action, payload);
+  return await socket().Call(action, payload);
 }
