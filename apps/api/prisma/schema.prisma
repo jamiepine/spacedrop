@@ -8,11 +8,23 @@ datasource db {
 }
 
 model Account {
-  username String @id
-  
-  @@map("account")
+  id       Int    @id @default(autoincrement())
+  username String @unique
+  email    String @unique
+  plan     Plan
+
+  @@map("accounts")
+}
+
+enum Plan {
+  FREE
+  TEIR1
+  TEIR2
 }
 
 model Client {
-  id String @id
+  id         String @id
+  ip_address String
+
+  @@map("clients")
 }

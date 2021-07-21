@@ -1,4 +1,4 @@
-import * as actions from './upload.actions';
+import * as actions from './actions';
 
 const { initUpload } = actions;
 

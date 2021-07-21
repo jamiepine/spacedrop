@@ -1,4 +1,4 @@
-import * as actions from './account.actions';
+import * as actions from './actions';
 
 const { createAccount } = actions;
 

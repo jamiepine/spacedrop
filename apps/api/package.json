@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon",
     "prisma:client": "npx prisma generate",
-    "migrate": "npx prisma migrate"
+    "migrate": "npx prisma migrate dev"
   },
   "dependencies": {
     "@prisma/client": "^2.26.0",

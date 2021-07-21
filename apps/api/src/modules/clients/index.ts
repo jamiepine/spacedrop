@@ -1,4 +1,4 @@
-import * as actions from './client.actions';
+import * as actions from './actions';
 
 const { createClient } = actions;
 

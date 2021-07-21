@@ -1,6 +1,11 @@
 type FileURI = string;
 export type LocalFileStore = Record<FileURI, File>;
 
+export interface Client {
+  id: string;
+  email: string;
+}
+
 export interface File {
   fileSizeInBytes: number;
   fileName: string;
